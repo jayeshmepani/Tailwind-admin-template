@@ -1,0 +1,502 @@
+{
+    "total": 31,
+    "totalNotFiltered": 31,
+    "rows": [
+        {
+            "id": 1,
+            "products": "Wireless Bluetooth Headphones",
+            "cp": "$30.00",
+            "sp": "$59.99",
+            "category": "Electronics",
+            "sub-category": "Audio",
+            "stock/quantity": 150,
+            "price": "$59.99",
+            "tags": [
+                "wireless",
+                "headphones",
+                "audio"
+            ],
+            "description": "High-quality wireless headphones with noise cancellation."
+        },
+        {
+            "id": 2,
+            "products": "Men's Running Shoes",
+            "cp": "$45.00",
+            "sp": "$89.99",
+            "category": "Footwear",
+            "sub-category": "Sports",
+            "stock/quantity": 200,
+            "price": "$89.99",
+            "tags": [
+                "shoes",
+                "running",
+                "sports"
+            ],
+            "description": "Lightweight and comfortable running shoes for men."
+        },
+        {
+            "id": 3,
+            "products": "Smartwatch with Heart Rate Monitor",
+            "cp": "$100.00",
+            "sp": "$199.99",
+            "category": "Electronics",
+            "sub-category": "Wearables",
+            "stock/quantity": 75,
+            "price": "$199.99",
+            "tags": [
+                "smartwatch",
+                "wearable",
+                "fitness"
+            ],
+            "description": "Track your fitness and health with this stylish smartwatch."
+        },
+        {
+            "id": 4,
+            "products": "Stainless Steel Water Bottle",
+            "cp": "$10.00",
+            "sp": "$24.99",
+            "category": "Home & Kitchen",
+            "sub-category": "Drinkware",
+            "stock/quantity": 300,
+            "price": "$24.99",
+            "tags": [
+                "water bottle",
+                "stainless steel",
+                "eco-friendly"
+            ],
+            "description": "Durable and insulated water bottle for all-day hydration."
+        },
+        {
+            "id": 5,
+            "products": "Yoga Mat",
+            "cp": "$15.00",
+            "sp": "$29.99",
+            "category": "Fitness",
+            "sub-category": "Yoga",
+            "stock/quantity": 120,
+            "price": "$29.99",
+            "tags": [
+                "yoga",
+                "fitness",
+                "exercise"
+            ],
+            "description": "Non-slip yoga mat for your daily workouts."
+        },
+        {
+            "id": 6,
+            "products": "Bluetooth Portable Speaker",
+            "cp": "$25.00",
+            "sp": "$49.99",
+            "category": "Electronics",
+            "sub-category": "Audio",
+            "stock/quantity": 90,
+            "price": "$49.99",
+            "tags": [
+                "speaker",
+                "bluetooth",
+                "portable"
+            ],
+            "description": "Compact speaker with powerful sound and long battery life."
+        },
+        {
+            "id": 7,
+            "products": "Classic Leather Wallet",
+            "cp": "$20.00",
+            "sp": "$39.99",
+            "category": "Accessories",
+            "sub-category": "Wallets",
+            "stock/quantity": 200,
+            "price": "$39.99",
+            "tags": [
+                "wallet",
+                "leather",
+                "accessory"
+            ],
+            "description": "Stylish leather wallet with multiple card slots."
+        },
+        {
+            "id": 8,
+            "products": "Electric Toothbrush",
+            "cp": "$30.00",
+            "sp": "$79.99",
+            "category": "Health & Personal Care",
+            "sub-category": "Oral Care",
+            "stock/quantity": 60,
+            "price": "$79.99",
+            "tags": [
+                "toothbrush",
+                "electric",
+                "oral care"
+            ],
+            "description": "Advanced electric toothbrush for superior cleaning."
+        },
+        {
+            "id": 9,
+            "products": "Gaming Mouse",
+            "cp": "$25.00",
+            "sp": "$39.99",
+            "category": "Computers",
+            "sub-category": "Peripherals",
+            "stock/quantity": 150,
+            "price": "$39.99",
+            "tags": [
+                "mouse",
+                "gaming",
+                "computer"
+            ],
+            "description": "High-precision gaming mouse with customizable buttons."
+        },
+        {
+            "id": 10,
+            "products": "LED Desk Lamp",
+            "cp": "$15.00",
+            "sp": "$34.99",
+            "category": "Home & Office",
+            "sub-category": "Lighting",
+            "stock/quantity": 180,
+            "price": "$34.99",
+            "tags": [
+                "desk lamp",
+                "LED",
+                "lighting"
+            ],
+            "description": "Adjustable LED desk lamp with multiple brightness settings."
+        },
+        {
+            "id": 11,
+            "products": "Portable Phone Charger",
+            "cp": "$20.00",
+            "sp": "$29.99",
+            "category": "Electronics",
+            "sub-category": "Chargers",
+            "stock/quantity": 250,
+            "price": "$29.99",
+            "tags": [
+                "charger",
+                "portable",
+                "electronics"
+            ],
+            "description": "Compact power bank for charging devices on the go."
+        },
+        {
+            "id": 12,
+            "products": "Non-Stick Cookware Set",
+            "cp": "$70.00",
+            "sp": "$149.99",
+            "category": "Home & Kitchen",
+            "sub-category": "Cookware",
+            "stock/quantity": 40,
+            "price": "$149.99",
+            "tags": [
+                "cookware",
+                "non-stick",
+                "kitchen"
+            ],
+            "description": "Durable non-stick cookware for easy cooking and cleaning."
+        },
+        {
+            "id": 13,
+            "products": "Wireless Charger",
+            "cp": "$10.00",
+            "sp": "$24.99",
+            "category": "Electronics",
+            "sub-category": "Chargers",
+            "stock/quantity": 200,
+            "price": "$24.99",
+            "tags": [
+                "wireless",
+                "charger",
+                "electronics"
+            ],
+            "description": "Fast wireless charging pad for compatible devices."
+        },
+        {
+            "id": 14,
+            "products": "Fitness Tracker",
+            "cp": "$40.00",
+            "sp": "$69.99",
+            "category": "Wearables",
+            "sub-category": "Fitness",
+            "stock/quantity": 100,
+            "price": "$69.99",
+            "tags": [
+                "fitness",
+                "tracker",
+                "wearable"
+            ],
+            "description": "Monitor your activity and sleep patterns with this fitness tracker."
+        },
+        {
+            "id": 15,
+            "products": "Ceramic Knife Set",
+            "cp": "$25.00",
+            "sp": "$39.99",
+            "category": "Home & Kitchen",
+            "sub-category": "Cutlery",
+            "stock/quantity": 150,
+            "price": "$39.99",
+            "tags": [
+                "knives",
+                "ceramic",
+                "kitchen"
+            ],
+            "description": "Sharp and lightweight ceramic knives for precise cutting."
+        },
+        {
+            "id": 16,
+            "products": "Men's Casual Jacket",
+            "cp": "$50.00",
+            "sp": "$89.99",
+            "category": "Clothing",
+            "sub-category": "Outerwear",
+            "stock/quantity": 80,
+            "price": "$89.99",
+            "tags": [
+                "jacket",
+                "casual",
+                "clothing"
+            ],
+            "description": "Stylish jacket perfect for casual outings."
+        },
+        {
+            "id": 17,
+            "products": "Wireless Earbuds",
+            "cp": "$40.00",
+            "sp": "$79.99",
+            "category": "Electronics",
+            "sub-category": "Audio",
+            "stock/quantity": 120,
+            "price": "$79.99",
+            "tags": [
+                "earbuds",
+                "wireless",
+                "audio"
+            ],
+            "description": "Comfortable wireless earbuds with excellent sound quality."
+        },
+        {
+            "id": 18,
+            "products": "Smart LED TV",
+            "cp": "$300.00",
+            "sp": "$499.99",
+            "category": "Electronics",
+            "sub-category": "Televisions",
+            "stock/quantity": 30,
+            "price": "$499.99",
+            "tags": [
+                "TV",
+                "smart",
+                "electronics"
+            ],
+            "description": "Ultra HD Smart TV with streaming capabilities."
+        },
+        {
+            "id": 19,
+            "products": "Camping Tent",
+            "cp": "$80.00",
+            "sp": "$129.99",
+            "category": "Outdoor",
+            "sub-category": "Camping Gear",
+            "stock/quantity": 60,
+            "price": "$129.99",
+            "tags": [
+                "tent",
+                "camping",
+                "outdoor"
+            ],
+            "description": "Spacious and durable tent for outdoor adventures."
+        },
+        {
+            "id": 20,
+            "products": "Electric Kettle",
+            "cp": "$20.00",
+            "sp": "$39.99",
+            "category": "Home & Kitchen",
+            "sub-category": "Appliances",
+            "stock/quantity": 150,
+            "price": "$39.99",
+            "tags": [
+                "kettle",
+                "electric",
+                "kitchen"
+            ],
+            "description": "Quick boiling electric kettle with auto shut-off feature."
+        },
+        {
+            "id": 21,
+            "products": "Pet Dog Bed",
+            "cp": "$25.00",
+            "sp": "$49.99",
+            "category": "Pets",
+            "sub-category": "Pet Supplies",
+            "stock/quantity": 100,
+            "price": "$49.99",
+            "tags": [
+                "dog bed",
+                "pet",
+                "comfortable"
+            ],
+            "description": "Comfortable bed for your furry friend."
+        },
+        {
+            "id": 22,
+            "products": "Travel Backpack",
+            "cp": "$40.00",
+            "sp": "$69.99",
+            "category": "Luggage",
+            "sub-category": "Bags",
+            "stock/quantity": 80,
+            "price": "$69.99",
+            "tags": [
+                "backpack",
+                "travel",
+                "luggage"
+            ],
+            "description": "Spacious and durable backpack for travel."
+        },
+        {
+            "id": 23,
+            "products": "Electric Grill",
+            "cp": "$50.00",
+            "sp": "$99.99",
+            "category": "Home & Kitchen",
+            "sub-category": "Grills",
+            "stock/quantity": 70,
+            "price": "$99.99",
+            "tags": [
+                "grill",
+                "electric",
+                "cooking"
+            ],
+            "description": "Indoor electric grill for delicious meals."
+        },
+        {
+            "id": 24,
+            "products": "Wireless Security Camera",
+            "cp": "$70.00",
+            "sp": "$129.99",
+            "category": "Home Security",
+            "sub-category": "Cameras",
+            "stock/quantity": 50,
+            "price": "$129.99",
+            "tags": [
+                "security",
+                "camera",
+                "wireless"
+            ],
+            "description": "Keep an eye on your home with this wireless security camera."
+        },
+        {
+            "id": 25,
+            "products": "Portable Air Purifier",
+            "cp": "$45.00",
+            "sp": "$89.99",
+            "category": "Home",
+            "sub-category": "Air Quality",
+            "stock/quantity": 90,
+            "price": "$89.99",
+            "tags": [
+                "air purifier",
+                "portable",
+                "home"
+            ],
+            "description": "Compact air purifier for cleaner air."
+        },
+        {
+            "id": 26,
+            "products": "Kids' Educational Tablet",
+            "cp": "$80.00",
+            "sp": "$149.99",
+            "category": "Electronics",
+            "sub-category": "Tablets",
+            "stock/quantity": 40,
+            "price": "$149.99",
+            "tags": [
+                "tablet",
+                "kids",
+                "educational"
+            ],
+            "description": "Tablet designed for kids with educational apps."
+        },
+        {
+            "id": 27,
+            "products": "Adjustable Dumbbells",
+            "cp": "$100.00",
+            "sp": "$199.99",
+            "category": "Fitness",
+            "sub-category": "Weights",
+            "stock/quantity": 60,
+            "price": "$199.99",
+            "tags": [
+                "dumbbells",
+                "fitness",
+                "exercise"
+            ],
+            "description": "Space-saving adjustable dumbbells for home workouts."
+        },
+        {
+            "id": 28,
+            "products": "Smart Thermostat",
+            "cp": "$70.00",
+            "sp": "$129.99",
+            "category": "Home Automation",
+            "sub-category": "Thermostats",
+            "stock/quantity": 80,
+            "price": "$129.99",
+            "tags": [
+                "thermostat",
+                "smart",
+                "home"
+            ],
+            "description": "Control your home's temperature from anywhere."
+        },
+        {
+            "id": 29,
+            "products": "Luxury Bathrobe",
+            "cp": "$40.00",
+            "sp": "$79.99",
+            "category": "Clothing",
+            "sub-category": "Loungewear",
+            "stock/quantity": 100,
+            "price": "$79.99",
+            "tags": [
+                "bathrobe",
+                "luxury",
+                "clothing"
+            ],
+            "description": "Soft and comfortable bathrobe for relaxation."
+        },
+        {
+            "id": 30,
+            "products": "High-Performance Blender",
+            "cp": "$ 80.00",
+            "sp": "$149.99",
+            "category": "Home & Kitchen",
+            "sub-category": "Appliances",
+            "stock/quantity": 70,
+            "price": "$149.99",
+            "tags": [
+                "blender",
+                "high-performance",
+                "kitchen"
+            ],
+            "description": "Blend smoothies and soups with this powerful blender."
+        },
+        {
+            "id": 31,
+            "products": "Smart Doorbell",
+            "cp": "$100.00",
+            "sp": "$199.99",
+            "category": "Home Security",
+            "sub-category": "Doorbells",
+            "stock/quantity": 50,
+            "price": "$199.99",
+            "tags": [
+                "doorbell",
+                "smart",
+                "security"
+            ],
+            "description": "See and speak to visitors from your smartphone."
+        }
+    ]
+}
