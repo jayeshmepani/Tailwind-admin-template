@@ -127,7 +127,7 @@ class TableComponent {
                          <i class="fa fa-trash"></i>
                      </button>
                  </div>` : ''}
-                 <div class="flex flex-wrap items-center gap-3 mt-2 sm:mt-0">
+                 <div class="flex flex-wrap items-center gap-3 mt-2 sm:mt-0 max-sm:justify-end">
                      ${this.options.enableSearch ? `
                      <div class="relative w-48 md:w-64">
                          <label for="search-${this.options.containerId}" class="sr-only">Search</label>
