@@ -3,13 +3,13 @@
 }
 
 .sidebar-transition {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out allow-discrete;
 }
 
 #sidebar {
-    width: calc-size(fit-content, size + 1rem) !important;
+    width: 16rem !important;
 
-    transition: width 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out allow-discrete;
 
     &:is(.collapsed) {
         width: 4rem !important;
@@ -74,7 +74,7 @@
 .submenu-click {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-out allow-discrete;
     background: transparent;
     padding-left: 2rem;
 
@@ -84,7 +84,7 @@
 }
 
 .submenu-arrow {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease allow-discrete;
 }
 
 .submenu-arrow.rotate {
@@ -103,12 +103,29 @@
 
 @media (width<768px) {
     #sidebar {
-        width: 0;
-        overflow: hidden;
+        &[style="width: 16rem;"] {
+            width: 16rem !important;
+            display: block;
+            opacity: 1;
+            transition:
+                width 0.5s ease-out allow-discrete,
+                display 0.5s ease-out allow-discrete,
+                opacity 0.37s ease-out;
+        }
+
+        &[style="width: 0px;"] {
+            width: 0px !important;
+            display: none;
+            opacity: 0;
+            transition:
+                width 0.5s ease-in allow-discrete,
+                display 0.5s ease-in allow-discrete,
+                opacity 0.37s ease-in;
+        }
     }
 
-    .mobile-toggle-icon {
-        transition: transform 3.3s ease;
+    #sidebar .mobile-toggle-icon {
+        transition: transform 3.3s ease allow-discrete;
 
         .mobile-toggle-active & {
             transform: rotate(180deg);
