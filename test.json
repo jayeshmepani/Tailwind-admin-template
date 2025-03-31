@@ -9,7 +9,7 @@
             "sp": "$59.99",
             "category": "Electronics",
             "sub-category": "Audio",
-            "stock/quantity": 150,
+            "quantity": 150,
             "price": "$59.99",
             "tags": [
                 "wireless",
@@ -25,7 +25,7 @@
             "sp": "$89.99",
             "category": "Footwear",
             "sub-category": "Sports",
-            "stock/quantity": 200,
+            "quantity": 200,
             "price": "$89.99",
             "tags": [
                 "shoes",
@@ -41,7 +41,7 @@
             "sp": "$199.99",
             "category": "Electronics",
             "sub-category": "Wearables",
-            "stock/quantity": 75,
+            "quantity": 75,
             "price": "$199.99",
             "tags": [
                 "smartwatch",
@@ -57,7 +57,7 @@
             "sp": "$24.99",
             "category": "Home & Kitchen",
             "sub-category": "Drinkware",
-            "stock/quantity": 300,
+            "quantity": 300,
             "price": "$24.99",
             "tags": [
                 "water bottle",
@@ -73,7 +73,7 @@
             "sp": "$29.99",
             "category": "Fitness",
             "sub-category": "Yoga",
-            "stock/quantity": 120,
+            "quantity": 120,
             "price": "$29.99",
             "tags": [
                 "yoga",
@@ -89,7 +89,7 @@
             "sp": "$49.99",
             "category": "Electronics",
             "sub-category": "Audio",
-            "stock/quantity": 90,
+            "quantity": 90,
             "price": "$49.99",
             "tags": [
                 "speaker",
@@ -105,7 +105,7 @@
             "sp": "$39.99",
             "category": "Accessories",
             "sub-category": "Wallets",
-            "stock/quantity": 200,
+            "quantity": 200,
             "price": "$39.99",
             "tags": [
                 "wallet",
@@ -121,7 +121,7 @@
             "sp": "$79.99",
             "category": "Health & Personal Care",
             "sub-category": "Oral Care",
-            "stock/quantity": 60,
+            "quantity": 60,
             "price": "$79.99",
             "tags": [
                 "toothbrush",
@@ -137,7 +137,7 @@
             "sp": "$39.99",
             "category": "Computers",
             "sub-category": "Peripherals",
-            "stock/quantity": 150,
+            "quantity": 150,
             "price": "$39.99",
             "tags": [
                 "mouse",
@@ -153,7 +153,7 @@
             "sp": "$34.99",
             "category": "Home & Office",
             "sub-category": "Lighting",
-            "stock/quantity": 180,
+            "quantity": 180,
             "price": "$34.99",
             "tags": [
                 "desk lamp",
@@ -169,7 +169,7 @@
             "sp": "$29.99",
             "category": "Electronics",
             "sub-category": "Chargers",
-            "stock/quantity": 250,
+            "quantity": 250,
             "price": "$29.99",
             "tags": [
                 "charger",
@@ -185,7 +185,7 @@
             "sp": "$149.99",
             "category": "Home & Kitchen",
             "sub-category": "Cookware",
-            "stock/quantity": 40,
+            "quantity": 40,
             "price": "$149.99",
             "tags": [
                 "cookware",
@@ -201,7 +201,7 @@
             "sp": "$24.99",
             "category": "Electronics",
             "sub-category": "Chargers",
-            "stock/quantity": 200,
+            "quantity": 200,
             "price": "$24.99",
             "tags": [
                 "wireless",
@@ -217,7 +217,7 @@
             "sp": "$69.99",
             "category": "Wearables",
             "sub-category": "Fitness",
-            "stock/quantity": 100,
+            "quantity": 100,
             "price": "$69.99",
             "tags": [
                 "fitness",
@@ -233,7 +233,7 @@
             "sp": "$39.99",
             "category": "Home & Kitchen",
             "sub-category": "Cutlery",
-            "stock/quantity": 150,
+            "quantity": 150,
             "price": "$39.99",
             "tags": [
                 "knives",
@@ -249,7 +249,7 @@
             "sp": "$89.99",
             "category": "Clothing",
             "sub-category": "Outerwear",
-            "stock/quantity": 80,
+            "quantity": 80,
             "price": "$89.99",
             "tags": [
                 "jacket",
@@ -265,7 +265,7 @@
             "sp": "$79.99",
             "category": "Electronics",
             "sub-category": "Audio",
-            "stock/quantity": 120,
+            "quantity": 120,
             "price": "$79.99",
             "tags": [
                 "earbuds",
@@ -281,7 +281,7 @@
             "sp": "$499.99",
             "category": "Electronics",
             "sub-category": "Televisions",
-            "stock/quantity": 30,
+            "quantity": 30,
             "price": "$499.99",
             "tags": [
                 "TV",
@@ -297,7 +297,7 @@
             "sp": "$129.99",
             "category": "Outdoor",
             "sub-category": "Camping Gear",
-            "stock/quantity": 60,
+            "quantity": 60,
             "price": "$129.99",
             "tags": [
                 "tent",
@@ -313,7 +313,7 @@
             "sp": "$39.99",
             "category": "Home & Kitchen",
             "sub-category": "Appliances",
-            "stock/quantity": 150,
+            "quantity": 150,
             "price": "$39.99",
             "tags": [
                 "kettle",
@@ -329,7 +329,7 @@
             "sp": "$49.99",
             "category": "Pets",
             "sub-category": "Pet Supplies",
-            "stock/quantity": 100,
+            "quantity": 100,
             "price": "$49.99",
             "tags": [
                 "dog bed",
@@ -345,7 +345,7 @@
             "sp": "$69.99",
             "category": "Luggage",
             "sub-category": "Bags",
-            "stock/quantity": 80,
+            "quantity": 80,
             "price": "$69.99",
             "tags": [
                 "backpack",
@@ -361,7 +361,7 @@
             "sp": "$99.99",
             "category": "Home & Kitchen",
             "sub-category": "Grills",
-            "stock/quantity": 70,
+            "quantity": 70,
             "price": "$99.99",
             "tags": [
                 "grill",
@@ -377,7 +377,7 @@
             "sp": "$129.99",
             "category": "Home Security",
             "sub-category": "Cameras",
-            "stock/quantity": 50,
+            "quantity": 50,
             "price": "$129.99",
             "tags": [
                 "security",
@@ -393,7 +393,7 @@
             "sp": "$89.99",
             "category": "Home",
             "sub-category": "Air Quality",
-            "stock/quantity": 90,
+            "quantity": 90,
             "price": "$89.99",
             "tags": [
                 "air purifier",
@@ -409,7 +409,7 @@
             "sp": "$149.99",
             "category": "Electronics",
             "sub-category": "Tablets",
-            "stock/quantity": 40,
+            "quantity": 40,
             "price": "$149.99",
             "tags": [
                 "tablet",
@@ -425,7 +425,7 @@
             "sp": "$199.99",
             "category": "Fitness",
             "sub-category": "Weights",
-            "stock/quantity": 60,
+            "quantity": 60,
             "price": "$199.99",
             "tags": [
                 "dumbbells",
@@ -441,7 +441,7 @@
             "sp": "$129.99",
             "category": "Home Automation",
             "sub-category": "Thermostats",
-            "stock/quantity": 80,
+            "quantity": 80,
             "price": "$129.99",
             "tags": [
                 "thermostat",
@@ -457,7 +457,7 @@
             "sp": "$79.99",
             "category": "Clothing",
             "sub-category": "Loungewear",
-            "stock/quantity": 100,
+            "quantity": 100,
             "price": "$79.99",
             "tags": [
                 "bathrobe",
@@ -473,7 +473,7 @@
             "sp": "$149.99",
             "category": "Home & Kitchen",
             "sub-category": "Appliances",
-            "stock/quantity": 70,
+            "quantity": 70,
             "price": "$149.99",
             "tags": [
                 "blender",
@@ -489,7 +489,7 @@
             "sp": "$199.99",
             "category": "Home Security",
             "sub-category": "Doorbells",
-            "stock/quantity": 50,
+            "quantity": 50,
             "price": "$199.99",
             "tags": [
                 "doorbell",

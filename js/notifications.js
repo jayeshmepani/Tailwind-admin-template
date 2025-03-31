@@ -1,4 +1,3 @@
-// notifications.js
 document.addEventListener('DOMContentLoaded', () => {
     const showNotificationButton = document.getElementById('show-notification-btn');
     const notificationTypeSelect = document.getElementById('notification-type');

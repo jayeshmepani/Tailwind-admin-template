@@ -1,12 +1,8 @@
-// charts.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Check if ApexCharts is loaded.  This is crucial.
     if (typeof ApexCharts === 'undefined') {
         console.error('ApexCharts is not loaded.  Make sure the CDN link is correct and included BEFORE your custom scripts.');
-        return; // Exit the function if ApexCharts is not loaded
+        return;
     }
-
-    // ApexCharts - Revenue Chart
     const revenueChartOptions = {
         series: [{
             name: 'Net Profit',
@@ -40,17 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     };
-
-    const revenueChartElement = document.querySelector("#revenue-chart"); // Get element once
-    if (revenueChartElement) { // Check if the element exists
-       const revenueChart = new ApexCharts(revenueChartElement, revenueChartOptions);
-       revenueChart.render();
+    const revenueChartElement = document.querySelector("#revenue-chart");
+    if (revenueChartElement) {
+        const revenueChart = new ApexCharts(revenueChartElement, revenueChartOptions);
+        revenueChart.render();
     } else {
         console.error("Revenue chart element not found.  Check your HTML for an element with id='revenue-chart'.");
     }
-
-
-    // ApexCharts - Traffic Sources Chart (Pie Chart)
     const trafficChartOptions = {
         series: [44, 55, 13, 43, 22],
         chart: {
@@ -67,13 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }]
     };
-
-     const trafficChartElement = document.querySelector("#traffic-chart"); // Get element once
-    if (trafficChartElement) {  //Check if element exists
+    const trafficChartElement = document.querySelector("#traffic-chart");
+    if (trafficChartElement) {
         const trafficChart = new ApexCharts(trafficChartElement, trafficChartOptions);
         trafficChart.render();
     } else {
-      console.error("Traffic chart element not found.  Check your HTML for an element with id='traffic-chart'.");
+        console.error("Traffic chart element not found.  Check your HTML for an element with id='traffic-chart'.");
     }
-
 });
