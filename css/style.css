@@ -1,9 +1,14 @@
+:root {
+    interpolate-size: allow-keywords;
+}
+
 .sidebar-transition {
     transition: all 0.3s ease-in-out;
 }
 
 #sidebar {
-    width: 16rem;
+    width: calc-size(fit-content, size + 1rem) !important;
+
     transition: width 0.3s ease-in-out;
 
     &:is(.collapsed) {
@@ -104,10 +109,10 @@
 
     .mobile-toggle-icon {
         transition: transform 3.3s ease;
-    }
 
-    .mobile-toggle-active .mobile-toggle-icon {
-        transform: rotate(180deg);
+        .mobile-toggle-active & {
+            transform: rotate(180deg);
+        }
     }
 
     .menu-hover-area {
