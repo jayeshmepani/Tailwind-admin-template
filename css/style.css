@@ -103,24 +103,40 @@
 
 @media (width<768px) {
     #sidebar {
+        +* {
+            position: absolute;
+            width: 100%;
+
+            #mobileMenuToggle {
+                position: relative;
+                z-index: 99999;
+            }
+        }
+
         &[style="width: 16rem;"] {
+            z-index: 9999;
+            position: fixed;
             width: 16rem !important;
             display: block;
             opacity: 1;
-            transition:
-                width 0.5s ease-out allow-discrete,
-                display 0.5s ease-out allow-discrete,
-                opacity 0.37s ease-out;
+
+            +* {
+                #mobileMenuToggle {
+                    transform: translateX(12rem);
+                }
+            }
         }
 
         &[style="width: 0px;"] {
             width: 0px !important;
             display: none;
             opacity: 0;
-            transition:
-                width 0.5s ease-in allow-discrete,
-                display 0.5s ease-in allow-discrete,
-                opacity 0.37s ease-in;
+
+            +* {
+                #mobileMenuToggle {
+                    transform: translateX(0rem);
+                }
+            }
         }
     }
 
