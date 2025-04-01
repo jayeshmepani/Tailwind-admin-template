@@ -316,38 +316,50 @@ class TableComponent {
 
         axios.get(url, { params: params })
             .then(response => {
-
                 let responseData = [];
                 let serverTotal = 0;
+                let dataToProcess = response.data;
 
                 if (this.options.serverSide) {
-                    if (response.data && Array.isArray(response.data.rows) && response.data.total !== undefined) {
-                        responseData = response.data.rows;
-                        serverTotal = parseInt(response.data.total, 10);
+                    if (dataToProcess && Array.isArray(dataToProcess.rows) && dataToProcess.total !== undefined) {
+                        responseData = dataToProcess.rows;
+                        serverTotal = parseInt(dataToProcess.total, 10);
                     } else {
-                        console.error('Invalid server-side data format received. Expected {rows: [], total: N}. Data:', response.data);
+                        console.error('Invalid server-side data format received. Expected {rows: [], total: N}. Data:', dataToProcess);
                         this.displayError('Invalid data format received from server.');
                         this.totalItems = 0;
                         this.tableData = [];
                         this.updateTable([]);
+                        this.hideLoading();
                         return;
                     }
                 } else {
-                    if (Array.isArray(response.data)) {
-                        responseData = response.data;
+                    // Client-side handling: check for both formats
+                    if (dataToProcess && Array.isArray(dataToProcess.rows) && dataToProcess.total !== undefined) {
+                        // Handle {rows: [], total: N} format
+                        responseData = dataToProcess.rows;
+                        serverTotal = parseInt(dataToProcess.total, 10); // Use provided total for info, but we'll use all rows locally
+                        this.tableData = responseData; // Store ALL rows locally
+                    } else if (Array.isArray(dataToProcess)) {
+                        // Handle simple array format
+                        responseData = dataToProcess;
                         serverTotal = responseData.length;
+                        this.tableData = responseData; // Store ALL rows locally
                     } else {
-                        console.error('Invalid client-side data format received. Expected an array. Data:', response.data);
+                        // Invalid format for client-side
+                        console.error('Invalid client-side data format received. Expected an array or {rows: [], total: N}. Data:', dataToProcess);
                         this.displayError('Invalid data format received.');
                         this.totalItems = 0;
                         this.tableData = [];
                         this.updateTable([]);
+                        this.hideLoading();
                         return;
                     }
                 }
 
                 this.totalItems = isNaN(serverTotal) ? 0 : serverTotal;
 
+                // Use responseData for column detection if columns aren't set yet
                 if (this.columns.length === 0 && responseData.length > 0) {
                     this.columns = Object.keys(responseData[0]).map(key => ({
                         field: key,
@@ -366,11 +378,11 @@ class TableComponent {
                 }
 
                 if (this.options.serverSide) {
-                    this.tableData = responseData;
-                    this.updateTable(this.tableData);
+                    this.tableData = responseData; // Server-side only gets the current page data
+                    this.updateTable(this.tableData); // Pass the specific page data
                 } else {
-                    this.tableData = responseData;
-                    this.updateTable();
+                    // Client-side: this.tableData already has all rows. updateTable will filter/paginate it.
+                    this.updateTable(); // Call without args to use internal this.tableData
                 }
 
             })
@@ -385,6 +397,7 @@ class TableComponent {
                 this.hideLoading();
             });
     }
+
 
     displayError(message) {
         const visibleColsCount = this.columns.filter(c => c.visible).length;
@@ -1342,13 +1355,13 @@ class TableComponent {
                <div class="relative p-4 w-full max-w-md max-h-full">
                    <div class="relative bg-white rounded-lg shadow-xl border border-gray-300">
                        <button type="button" class="modal-close-button absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="${this.deleteModalId}">
-                           <svg class="w-3 h-3" aria-hidden="true" xmlns="http:
+                           <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                            </svg>
                            <span class="sr-only">Close modal</span>
                        </button>
                        <div class="p-4 md:p-5 text-center">
-                           <svg class="mx-auto mb-4 text-gray-400 w-12 h-12" aria-hidden="true" xmlns="http:
+                           <svg class="mx-auto mb-4 text-gray-400 w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                            </svg>
                            <h3 class="mb-5 text-lg font-normal text-gray-700">Are you sure you want to delete this item?</h3>
@@ -1455,7 +1468,7 @@ class TableComponent {
                              Edit Item
                          </h3>
                          <button type="button" class="modal-close-button text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="${this.editModalId}">
-                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http:
+                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                               </svg>
                              <span class="sr-only">Close modal</span>
