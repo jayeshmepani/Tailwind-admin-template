@@ -282,21 +282,24 @@
                 enableViewToggle: true,
                 enableDelete: true,
                 enableRefresh: true,
-                editable: true, 
+                editable: true,
                 customActions: [
                     {
                         type: 'button',
-                        class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-xs',
+                        class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-xs', // Your custom class
                         icon: 'fa fa-edit',
                         label: 'Edit',
                         modalId: 'edit-modal-container',
+                        // route: '/your/api/items/{id}' // Optional here, saveEdit uses main option
                     },
                     {
                         type: 'modal',
-                        class: 'bg-red-600 hover:bg-red-700 text-white py-1 px-2 rounded text-xs focus:outline-none transition-colors duration-200',
+                        class: 'bg-red-600 hover:bg-red-700 text-white py-1 px-2 rounded text-xs focus:outline-none transition-colors duration-200', // Your custom class
                         icon: 'fa fa-trash',
                         label: 'Delete',
                         modalId: 'delete-modal',
+                        //method: 'DELETE', // <-- Add HTTP method
+                        //route: '/your/api/items/{id}' // <-- Add the route template (matches options.deleteRoute)
                     },
                 ]
             });
