@@ -11,11 +11,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <div class="flex min-h-screen">
-        <!-- Sidebar -->
         <aside id="sidebar"
-            class="sidebar-transition w-64 md:w-64 bg-white border-r border-gray-200 min-h-screen relative">
+            class="sidebar-transition w-64 md:w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 min-h-screen relative">
             <div class="px-4 py-5 flex items-center justify-between">
                 <div id="logo" class="flex items-center">
                     <div class="w-8 h-8">
@@ -28,9 +27,10 @@
                             <circle cx="50" cy="67" r="25" fill="#6BCB77" opacity="0.7" />
                         </svg>
                     </div>
-                    <span class="menu-text ml-3 text-xl font-semibold text-gray-800">Omniverse</span>
+                    <span class="menu-text ml-3 text-xl font-semibold text-gray-800 dark:text-gray-200">Omniverse</span>
                 </div>
-                <button id="desktopMenuToggle" class="p-2 rounded-lg text-gray-500 max-md:hidden">
+                <button id="desktopMenuToggle"
+                    class="p-2 rounded-lg text-gray-500 dark:text-gray-400 max-md:hidden bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -39,125 +39,136 @@
                 </button>
             </div>
             <div class="p-4">
-                <p class="menu-text text-gray-400 text-sm mb-2">Dashboard</p>
+                <p class="menu-text text-gray-400 dark:text-gray-500 text-sm mb-2">Dashboard</p>
                 <ul class="space-y-2">
                     <li class="menu-item hover-trigger">
-                        <a href="/" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <a href="/"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                             </svg>
                             <span class="menu-text ml-3">Overview</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Overview</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Overview</span>
                         </div>
                     </li>
-
-                    <p class="menu-text text-gray-400 text-sm mb-2">Components</p>
+                    <p class="menu-text text-gray-400 dark:text-gray-500 text-sm mb-2">Components</p>
                     <li class="menu-item hover-trigger">
-                        <a href="charts.html" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <a href="charts.html"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                             <span class="menu-text ml-3">Charts</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Charts</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Charts</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
-                        <a href="forms.html" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <a href="forms.html"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                             </svg>
                             <span class="menu-text ml-3">Forms</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Forms</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Forms</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
                         <a href="elements.html"
-                            class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                             </svg>
                             <span class="menu-text ml-3">Elements</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Elements</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Elements</span>
                         </div>
                     </li>
-
                     <li class="menu-item hover-trigger">
-                        <a href="modals.html" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <a href="modals.html"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                             </svg>
                             <span class="menu-text ml-3">Modals</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Modals</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Modals</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
-                        <a href="table.html" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <a href="table.html"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                             </svg>
                             <span class="menu-text ml-3">Table</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Table</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Table</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
                         <a href="notifications.html"
-                            class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                             </svg>
                             <span class="menu-text ml-3">Notifications</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Notifications</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Notifications</span>
                         </div>
                     </li>
-
-                    <p class="menu-text text-gray-400 text-sm mb-2">Other Menus</p>
-                    <!-- Add other menu items similarly -->
+                    <p class="menu-text text-gray-400 dark:text-gray-500 text-sm mb-2">Other Menus</p>
                     <li class="menu-item hover-trigger">
-                        <a href="#" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <a href="#"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                                 </path>
                             </svg>
                             <span class="menu-text ml-3">Menu 1</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Menu 1</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Menu 1</span>
                         </div>
                     </li>
                     <li class="menu-item menu-item-hover hover-trigger">
                         <a href="#"
-                            class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100 justify-between">
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800 justify-between">
                             <div class="flex items-center">
-                                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor"
+                                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -170,40 +181,38 @@
                                     d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
-                        <!-- Hover-based submenu for collapsed state -->
                         <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Menu 2</span>
-                            <div class="submenu-hover">
-                                <ul class="bg-white py-1">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Menu 2</span>
+                            <div class="bg-white dark:bg-gray-700 submenu-hover">
+                                <ul class="bg-white dark:bg-gray-700 py-1 rounded">
                                     <li><a href="#"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenu
+                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">Submenu
                                             2.1</a></li>
                                     <li><a href="#"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenu
+                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">Submenu
                                             2.2</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <!-- Click-based submenu for expanded state -->
                         <div class="submenu-click">
-                            <ul class="bg-white py-1">
-                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenu
-                                        2.1</a></li>
-                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenu
-                                        2.2</a></li>
-                            </ul>
-                        </div>
+                            <ul class="bg-gray-50 dark:bg-gray-700 py-1 mt-1 rounded">
+                               <li><a href="#"
+                                       class="block pl-11 pr-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Submenu
+                                       2.1</a></li>
+                               <li><a href="#"
+                                       class="block pl-11 pr-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Submenu
+                                       2.2</a></li>
+                           </ul>
+                       </div>
                     </li>
                 </ul>
             </div>
         </aside>
-
-        <!-- Main Content -->
         <div id="main-content" class="flex-1">
-            <!-- Top Bar -->
             <header
-                class="bg-white p-4 flex items-center border-b border-gray-200 md:justify-end max-md:justify-between">
-                <button id="mobileMenuToggle" class="p-2 rounded-lg text-gray-500 md:hidden">
+                class="bg-white dark:bg-gray-800 p-4 flex items-center border-b border-gray-200 dark:border-gray-700 md:justify-end max-md:justify-between">
+                <button id="mobileMenuToggle"
+                    class="p-2 rounded-lg text-gray-500 dark:text-gray-400 md:hidden bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700">
                     <svg class="mobile-toggle-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -213,65 +222,96 @@
                     </svg>
                 </button>
                 <div class="flex items-center">
-                    <div class="flex items-center">
-                        <div class="relative">
-                            <!-- Search Input -->
-                            <input type="text" placeholder="Search..."
-                                class="bg-gray-100 rounded-full py-2 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search..."
+                            class="bg-gray-100 dark:bg-gray-700 rounded-full py-2 px-4 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 dark:text-gray-200 dark:placeholder-gray-400 text-gray-900">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <i class="fa fa-search text-gray-400 dark:text-gray-500"></i>
                         </div>
-                        <div class="ml-4 relative">
-                            <button class="flex items-center text-gray-500 focus:outline-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </div>
+
+                    <div class="theme-toggle-container" title="Toggle Theme">
+                        <label class="toggle">
+                            <input type="checkbox" id="themeToggle">
+                            <div class="slider">
+                                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none" />
+                                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" />
+                                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" />
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" />
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" />
+                                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" />
+                                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" />
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" />
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" />
                                 </svg>
-                                <span
-                                    class="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs absolute -top-1 -right-1">3</span>
-                            </button>
-                        </div>
-                        <!-- User Profile -->
-                        <div class="ml-4">
-                            <button class="flex items-center focus:outline-none">
-                                <!-- <img src="/api/placeholder/40/40" alt="User" class="h-8 w-8 rounded-full object-cover"> -->
-                                <div
-                                    class="h-9 w-9 rounded-full object-cover bg-gray-200 flex items-center justify-center">
-                                    <i class="fa-regular fa-user"></i>
-                                </div>
-                                <span class="ml-2 text-sm font-medium text-gray-700 hidden md:block">John Doe</span>
-                            </button>
-                        </div>
+                                <div class="slider-icon"></div>
+                                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="none" fill="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="relative mr-4">
+                        <button
+                            class="flex items-center text-gray-500 dark:text-gray-400 focus:outline-none p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                            <span
+                                class="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs absolute -top-1 -right-1">3</span>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="flex items-center focus:outline-none">
+                            <div
+                                class="h-9 w-9 rounded-full object-cover bg-gray-200 dark:bg-gray-600 flex items-center justify-center text-gray-500 dark:text-gray-300">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <span class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300 hidden md:block">John
+                                Doe</span>
+                        </button>
                     </div>
                 </div>
             </header>
 
-            <!-- Content -->
             <main class="p-6">
-                <h1 class="text-2xl font-semibold text-gray-800 mb-6">Dashboard</h1>
-
+                <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Modals</h1>
                 <section id="modals-section" class="section">
-                    <div class="flex gap-2">
-                        <!-- Modal toggle -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 mb-6">
+                        <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Modal Examples</h2>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                            Click the buttons below to toggle different types of modals provided by Flowbite.
+                            Ensure the necessary Flowbite JavaScript is included and initialized for these to work.
+                            Dark mode styling has been applied to the modal components.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+
                         <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-                            class="block text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                            class="block text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             type="button">
-                            Toggle modal
+                            Default Modal
                         </button>
 
-                        <!-- Main modal -->
                         <div id="default-modal" tabindex="-1" aria-hidden="true"
                             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                             <div class="relative p-4 w-full max-w-2xl max-h-full">
-                                <!-- Modal content -->
-                                <div class="relative bg-white rounded-lg shadow-sm">
-                                    <!-- Modal header -->
+                                <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
                                     <div
-                                        class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
-                                        <h3 class="text-xl font-semibold text-black">
+                                        class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200 dark:border-gray-600">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                                             Terms of Service
                                         </h3>
                                         <button type="button"
-                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                                             data-modal-hide="default-modal">
                                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                                 fill="none" viewBox="0 0 14 14">
@@ -282,15 +322,14 @@
                                             <span class="sr-only">Close modal</span>
                                         </button>
                                     </div>
-                                    <!-- Modal body -->
                                     <div class="p-4 md:p-5 space-y-4">
-                                        <p class="text-base leading-relaxed text-gray-700">
+                                        <p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
                                             With less than a month to go before the European Union enacts new consumer
                                             privacy laws for its
                                             citizens, companies around the world are updating their terms of service
                                             agreements to comply.
                                         </p>
-                                        <p class="text-base leading-relaxed text-gray-700">
+                                        <p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
                                             The European Union’s General Data Protection Regulation (G.D.P.R.) goes into
                                             effect on May 25 and is
                                             meant to ensure a common set of data rights in the European Union. It
@@ -299,14 +338,14 @@
                                             personally affect them.
                                         </p>
                                     </div>
-                                    <!-- Modal footer -->
-                                    <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b">
+                                    <div
+                                        class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
                                         <button data-modal-hide="default-modal" type="button"
-                                            class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">
+                                            class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                             I accept
                                         </button>
                                         <button data-modal-hide="default-modal" type="button"
-                                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">
+                                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                                             Decline
                                         </button>
                                     </div>
@@ -314,23 +353,23 @@
                             </div>
                         </div>
 
-                        <!-- Static Modal -->
                         <button data-modal-target="static-modal" data-modal-toggle="static-modal"
-                            class="block text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5"
+                            class="block text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             type="button">
-                            Toggle Static Modal
+                            Static Modal
                         </button>
 
                         <div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
-                            class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-50 justify-center items-center">
-                            <div class="relative p-4 w-full max-w-2xl">
-                                <div class="relative bg-white rounded-lg shadow-sm">
-                                    <div class="flex items-center justify-between p-4 border-b rounded-t">
-                                        <h3 class="text-xl font-semibold text-black">
+                            class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                                    <div
+                                        class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                                             Static Modal
                                         </h3>
                                         <button type="button"
-                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                                             data-modal-hide="static-modal">
                                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                                 fill="none" viewBox="0 0 14 14">
@@ -341,44 +380,43 @@
                                             <span class="sr-only">Close modal</span>
                                         </button>
                                     </div>
-                                    <div class="p-4 space-y-4">
-                                        <p class="text-base leading-relaxed text-gray-700">
+                                    <div class="p-4 md:p-5 space-y-4">
+                                        <p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
                                             With less than a month to go before the European Union enacts new consumer
-                                            privacy laws, companies
-                                            are updating their terms.
+                                            privacy laws for its citizens, companies around the world are updating their
+                                            terms of service agreements to comply.
                                         </p>
-                                        <p class="text-base leading-relaxed text-gray-700">
-                                            The G.D.P.R. ensures common data rights and requires prompt breach
-                                            notifications.
+                                        <p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                                            The European Union’s General Data Protection Regulation (G.D.P.R.) goes into
+                                            effect on May 25 and is meant to ensure a common set of data rights in the
+                                            European Union. It requires organizations to notify users as soon as
+                                            possible of high-risk data breaches that could personally affect them.
                                         </p>
                                     </div>
-                                    <div class="flex items-center p-4 border-t rounded-b">
+                                    <div
+                                        class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
                                         <button data-modal-hide="static-modal" type="button"
-                                            class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">
-                                            I accept
-                                        </button>
+                                            class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I
+                                            accept</button>
                                         <button data-modal-hide="static-modal" type="button"
-                                            class="py-2.5 px-5 ml-3 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-100">
-                                            Decline
-                                        </button>
+                                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Decline</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Popup Modal -->
                         <button data-modal-target="popup-modal" data-modal-toggle="popup-modal"
-                            class="block text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                            class="block text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             type="button">
-                            Toggle modal
+                            Popup Modal
                         </button>
 
                         <div id="popup-modal" tabindex="-1"
                             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                             <div class="relative p-4 w-full max-w-md max-h-full">
-                                <div class="relative bg-white rounded-lg shadow-sm">
+                                <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
                                     <button type="button"
-                                        class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                        class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                                         data-modal-hide="popup-modal">
                                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                             fill="none" viewBox="0 0 14 14">
@@ -388,20 +426,22 @@
                                         <span class="sr-only">Close modal</span>
                                     </button>
                                     <div class="p-4 md:p-5 text-center">
-                                        <svg class="mx-auto mb-4 text-gray-400 w-12 h-12" aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200"
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 20 20">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                                 stroke-width="2"
                                                 d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                         </svg>
-                                        <h3 class="mb-5 text-lg font-normal text-gray-700">Are you sure you want to
+                                        <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you
+                                            sure you want to
                                             delete this product?</h3>
                                         <button data-modal-hide="popup-modal" type="button"
-                                            class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+                                            class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
                                             Yes, I'm sure
                                         </button>
                                         <button data-modal-hide="popup-modal" type="button"
-                                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">
+                                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                                             No, cancel
                                         </button>
                                     </div>
@@ -409,21 +449,21 @@
                             </div>
                         </div>
 
-                        <!-- Fullscreen Modal -->
                         <button data-modal-target="fullscreen-modal" data-modal-toggle="fullscreen-modal"
-                            class="block text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5"
+                            class="block text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             type="button">
-                            Toggle Fullscreen Modal
+                            Fullscreen Modal
                         </button>
 
                         <div id="fullscreen-modal" tabindex="-1"
-                            class="hidden fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-75">
+                            class="hidden fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-75 dark:bg-opacity-80">
                             <div class="w-full h-full p-6 lg:p-12">
-                                <div class="h-full bg-white rounded-lg shadow-xl overflow-auto">
-                                    <div class="p-6 border-b flex items-center justify-between">
-                                        <h3 class="text-2xl font-bold text-black">Fullscreen Modal</h3>
+                                <div class="h-full bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-auto">
+                                    <div class="p-6 border-b dark:border-gray-600 flex items-center justify-between">
+                                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Fullscreen Modal
+                                        </h3>
                                         <button type="button"
-                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                                             data-modal-hide="fullscreen-modal">
                                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                                 fill="none" viewBox="0 0 14 14">
@@ -435,14 +475,17 @@
                                         </button>
                                     </div>
                                     <div class="p-6">
-                                        <p class="text-gray-700">This modal takes up the entire screen. It can be used
+                                        <p class="text-gray-600 dark:text-gray-400">This modal takes up the entire
+                                            screen. It can be used
                                             for immersive
                                             experiences
                                             or important notices.</p>
                                     </div>
-                                    <div class="p-6 border-t flex justify-end">
+                                    <div class="p-6 border-t dark:border-gray-600 flex justify-end">
                                         <button data-modal-hide="fullscreen-modal" type="button"
-                                            class="text-white bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-md">Close</button>
+                                            class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                            Close
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -464,6 +507,7 @@
     <script src="js/sidebar.js"></script>
     <script src="js/flowbite.js"></script>
     <script src="js/font-awesome.all.min.js"></script>
+    <script src="js/theme.js"></script>
 
 </body>
 

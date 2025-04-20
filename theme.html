@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Neumorphic Theme Toggle</title>
+    <style>
+        :root {
+            /* Base Colors */
+            --bg-light: #e0e5ec;
+            /* Slightly off-white for neumorphism */
+            --text-light: #333;
+            --bg-dark: #2a2a2a;
+            /* Dark grey for neumorphism */
+            --text-dark: #e0e5ec;
+            --accent: #4ade80;
+            /* green */
+            --sun-color: #fbbf24;
+            /* yellow */
+            --moon-color: #818cf8;
+            /* indigo */
+
+            /* Neumorphic Shadows (Light Mode) */
+            --shadow-light-outer-light: -6px -6px 12px #ffffff;
+            --shadow-dark-outer-light: 6px 6px 12px #bebebe;
+            --shadow-light-inner-light: inset -4px -4px 8px #ffffff;
+            --shadow-dark-inner-light: inset 4px 4px 8px #bebebe;
+
+            /* Neumorphic Shadows (Dark Mode) */
+            --shadow-light-outer-dark: -6px -6px 12px #3a3a3a;
+            /* Lighter dark shadow */
+            --shadow-dark-outer-dark: 6px 6px 12px #1a1a1a;
+            /* Darker dark shadow */
+            --shadow-light-inner-dark: inset -4px -4px 8px #3a3a3a;
+            --shadow-dark-inner-dark: inset 4px 4px 8px #1a1a1a;
+
+            /* Gradients (Subtle) */
+            --gradient-light: linear-gradient(145deg, #f0f5fc, #cacfd6);
+            --gradient-dark: linear-gradient(145deg, #333333, #222222);
+            --gradient-accent: linear-gradient(145deg, #52f890, #45d075);
+
+            /* Transitions */
+            --transition-speed: 0.4s;
+            --transition-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            /* Bouncy effect */
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            /* Ensure container can center */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-light);
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+
+        body.dark {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        /* --- Neumorphic Container --- */
+        .neumorphic-container {
+            padding: 3rem;
+            border-radius: 30px;
+            background: var(--bg-light);
+            box-shadow: var(--shadow-light-outer-light), var(--shadow-dark-outer-light);
+            transition: background var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            display: flex;
+            /* Added for centering content */
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        body.dark .neumorphic-container {
+            background: var(--bg-dark);
+            box-shadow: var(--shadow-light-outer-dark), var(--shadow-dark-outer-dark);
+        }
+
+        /* --- Theme Label --- */
+        #themeLabel {
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: color var(--transition-speed) ease;
+            color: var(--text-light);
+            /* Ensure it uses theme color */
+        }
+
+        body.dark #themeLabel {
+            color: var(--text-dark);
+        }
+
+        /* --- Theme Toggle Structure --- */
+        .theme-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Removed gap and margin-top, handled by container */
+        }
+
+        /* --- Enhanced Toggle Button --- */
+        .toggle {
+            position: relative;
+            width: 80px;
+            /* Larger */
+            height: 40px;
+            /* Larger */
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background var(--transition-speed) ease,
+                box-shadow var(--transition-speed) ease,
+                transform 0.1s ease;
+            /* Quick scale transition */
+            ;
+            background: var(--gradient-light);
+            /* Subtle gradient */
+            box-shadow: var(--shadow-light-inner-light), var(--shadow-dark-inner-light);
+            /* Inner shadow for depth */
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            /* Padding for icon spacing */
+            overflow: hidden;
+            /* Hide overflowing highlight */
+        }
+
+        body.dark .toggle {
+            background: var(--gradient-dark);
+            box-shadow: var(--shadow-light-inner-dark), var(--shadow-dark-inner-dark);
+        }
+
+        /* Subtle Scale on Interaction */
+        .toggle:active {
+            transform: scale(0.97);
+        }
+
+        /* --- Radial Highlight Pseudo-Element --- */
+        .toggle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            /* Initial position behind sun */
+            width: 30px;
+            /* Size of highlight */
+            height: 30px;
+            border-radius: 50%;
+            background: radial-gradient(circle, hsla(45, 96%, 62%, 0.5), transparent 70%);
+            /* Sun color with alpha */
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            transition: left var(--transition-speed) ease, opacity var(--transition-speed) ease, background var(--transition-speed) ease;
+            z-index: 0;
+            /* Behind icons and slider */
+        }
+
+        body.dark .toggle::before {
+            left: calc(100% - 20px);
+            /* Position behind moon */
+            background: radial-gradient(circle, hsla(244, 83%, 74%, 0.6), transparent 70%);
+            /* Moon color with alpha */
+        }
+
+
+        .toggle input {
+            display: none;
+        }
+
+        /* --- Enhanced Slider Knob --- */
+        .slider-icon {
+            position: absolute;
+            height: 32px;
+            /* Slightly smaller than toggle height */
+            width: 32px;
+            background: var(--bg-light);
+            /* Match neumorphic background */
+            border-radius: 50%;
+            /* Bouncy transition only for transform */
+            transition: transform var(--transition-speed) var(--transition-bounce),
+                background var(--transition-speed) ease,
+                box-shadow var(--transition-speed) ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            left: 4px;
+            /* Initial position */
+            top: 4px;
+            pointer-events: none;
+            box-shadow: var(--shadow-light-outer-light), var(--shadow-dark-outer-light);
+            /* Outer shadow for raised effect */
+        }
+
+        body.dark .slider-icon {
+            background: var(--bg-dark);
+            box-shadow: var(--shadow-light-outer-dark), var(--shadow-dark-outer-dark);
+        }
+
+        input:checked+.slider .slider-icon {
+            transform: translateX(40px);
+            /* Move distance = toggle width - knob width - (2*left padding) */
+        }
+
+        input:checked:active+.slider .slider-icon {
+            /* Combine scale from .toggle:active with translate */
+            transform: scale(0.95) translateX(40px);
+        }
+
+        input:not(:checked):active+.slider .slider-icon {
+            transform: scale(0.95) translateX(0px);
+        }
+
+
+        /* --- Improved Icon Styling --- */
+        .slider {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            padding: 0 9px;
+            /* Adjust icon padding */
+            position: relative;
+            z-index: 1;
+            /* Above highlight, below slider knob */
+        }
+
+        .sun-icon,
+        .moon-icon {
+            width: 20px;
+            /* Maintain consistent icon size */
+            height: 20px;
+            transition: color var(--transition-speed) ease, opacity var(--transition-speed) ease, filter var(--transition-speed) ease;
+            filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.2));
+            /* Base subtle shadow */
+            overflow: visible;
+            /* Allow glow/shadow to exceed bbox */
+        }
+
+        /* Specific SVG styling */
+        .sun-icon circle {
+            transition: fill var(--transition-speed) ease;
+            fill: var(--sun-color);
+            /* Fill set directly */
+        }
+
+        .sun-icon line {
+            transition: stroke var(--transition-speed) ease;
+            stroke: var(--sun-color);
+            /* Stroke set directly */
+        }
+
+        .moon-icon path {
+            transition: fill var(--transition-speed) ease;
+            fill: var(--moon-color);
+            /* Fill set directly */
+        }
+
+
+        /* Light Mode Icon State */
+        .sun-icon {
+            opacity: 1;
+            filter: drop-shadow(0 0 3px var(--sun-color));
+            /* Glow */
+            color: var(--sun-color);
+            /* Set color variable for potential future use */
+        }
+
+        .moon-icon {
+            opacity: 0.4;
+            /* Dimmed */
+            color: var(--moon-color);
+        }
+
+        /* Dark Mode Icon State */
+        body.dark .sun-icon {
+            opacity: 0.4;
+            /* Dimmed */
+            filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.2));
+            /* Remove Glow */
+            color: var(--sun-color);
+            /* Keep color variable */
+        }
+
+        body.dark .sun-icon circle,
+        body.dark .sun-icon line {
+            /* Ensure color remains when dimmed */
+            fill: var(--sun-color);
+            stroke: var(--sun-color);
+        }
+
+
+        body.dark .moon-icon {
+            opacity: 1;
+            filter: drop-shadow(0 0 4px var(--moon-color));
+            /* Glow */
+            color: var(--moon-color);
+        }
+
+        body.dark .moon-icon path {
+            fill: var(--moon-color);
+            /* Ensure color updates */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="neumorphic-container">
+        <span id="themeLabel">Light Mode</span>
+        <div class="theme-toggle">
+            <label class="toggle">
+                <input type="checkbox" id="themeToggle">
+                <div class="slider">
+                    <!-- CORRECTED Sun Icon -->
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Circle (Filled) -->
+                        <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none" />
+                        <!-- Rays (Strokes) -->
+                        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" />
+                        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" />
+                        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" />
+                        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" />
+                    </svg>
+
+                    <!-- Slider Knob -->
+                    <div class="slider-icon">
+                        <!-- Intentionally empty, it's the visual knob -->
+                    </div>
+
+                    <!-- Moon Icon (Using fill="currentColor" now for consistency) -->
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="none" fill="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <script>
+        const toggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeLabel = document.getElementById('themeLabel'); // Get the label element
+
+        // Function to update label
+        function updateLabel(theme) {
+            themeLabel.textContent = theme === 'dark' ? 'Dark Mode' : 'Light Mode';
+        }
+
+        // Load from localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark');
+            toggle.checked = true;
+            updateLabel('dark'); // Update label on load
+        } else {
+            // Default to light mode if nothing saved or saved theme is 'light'
+            body.classList.remove('dark'); // Ensure dark is removed if savedTheme is 'light'
+            toggle.checked = false;
+            updateLabel('light'); // Update label on load
+        }
+
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                updateLabel('dark'); // Update label on change
+            } else {
+                body.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                updateLabel('light'); // Update label on change
+            }
+        });
+
+        // Refined active scale effect CSS handles this better now
+        // No extra JS needed for combining scale and translate on active
+
+
+    </script>
+</body>
+
+</html>

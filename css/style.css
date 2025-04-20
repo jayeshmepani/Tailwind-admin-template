@@ -1,23 +1,193 @@
 :root {
     interpolate-size: allow-keywords;
 
-    @media (prefers-color-scheme: dark) {
-        filter: invert(0.97) hue-rotate(183deg) contrast(0.97) brightness(1.03);
+    --toggle-bg-light: #ffffff;
+    --toggle-bg-dark: #1f2937;
 
-        #logo :is(img, svg) {
-            filter: invert(0.97) hue-rotate(183deg) contrast(0.97) brightness(1.03);
+    --toggle-text-light: #374151;
+    --toggle-text-dark: #d1d5db;
+
+    --sun-color: hsl(43, 97%, 55%);
+    --moon-color: hsl(234, 87%, 73%);
+
+    --shadow-light-outer-light: -5px -5px 10px rgba(255, 255, 255, 0.7);
+    --shadow-dark-outer-light: 5px 5px 10px #d1d5db;
+    --shadow-light-inner-light: inset -3px -3px 6px rgba(255, 255, 255, 0.7);
+    --shadow-dark-inner-light: inset 3px 3px 6px #d1d5db;
+
+    --shadow-light-outer-dark: -5px -5px 10px #2e3d51;
+    --shadow-dark-outer-dark: 5px 5px 10px #111827;
+    --shadow-light-inner-dark: inset -3px -3px 6px #2e3d51;
+    --shadow-dark-inner-dark: inset 3px 3px 6px #111827;
+
+    --gradient-light: var(--toggle-bg-light);
+    --gradient-dark: var(--toggle-bg-dark);
+
+    --transition-speed: 0.5s;
+    --transition-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+    --body-bg-light: #F3F4F6;
+    --body-text-light: #111827;
+    --body-bg-dark: #111827;
+    --body-text-dark: #F3F4F6;
+}
+
+html.dark {
+    text {
+        fill: #d9d9d9;
+    }
+}
+
+.theme-toggle-container {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.toggle {
+    position: relative;
+    width: 73px;
+    height: 33px;
+    border-radius: 100vh;
+    cursor: pointer;
+    transition: background var(--transition-speed) ease,
+        box-shadow var(--transition-speed) ease,
+        transform 0.1s ease;
+    background: var(--gradient-light);
+    box-shadow: var(--shadow-light-inner-light), var(--shadow-dark-inner-light);
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    overflow: hidden;
+    outline: 1px solid #8080806e;
+
+    html.dark & {
+        background: var(--gradient-dark);
+        box-shadow: var(--shadow-light-inner-dark), var(--shadow-dark-inner-dark);
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+
+    input {
+        display: none;
+
+        &:checked+.slider .slider-icon {
+            transform: translateX(calc(100% + 13px));
+        }
+
+        &:checked:active+.slider .slider-icon {
+            transform: scale(0.95) translateX(calc(100%));
+        }
+
+        &:not(:checked):active+.slider .slider-icon {
+            transform: scale(0.95) translateX(0px);
+        }
+    }
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.slider-icon {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background: hsl(from var(--moon-color) h s 95%);
+    border-radius: 50%;
+    transition: transform var(--transition-speed) var(--transition-bounce),
+        background var(--transition-speed) ease,
+        box-shadow var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    left: 1px;
+    top: 4px;
+    pointer-events: none;
+    outline: 1px solid #80808040;
+    box-shadow: var(--shadow-light-outer-light), var(--shadow-dark-outer-light);
+
+    html.dark & {
+        background: var(--toggle-bg-dark);
+        box-shadow: var(--shadow-light-outer-dark), var(--shadow-dark-outer-dark);
+    }
+}
+
+.sun-icon,
+.moon-icon {
+    width: 18px;
+    height: 18px;
+    transition: color var(--transition-speed) ease, opacity var(--transition-speed) ease, filter var(--transition-speed) ease;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1));
+    overflow: visible;
+}
+
+.sun-icon {
+    opacity: 1;
+    filter: drop-shadow(0 0 2px var(--sun-color));
+    color: var(--sun-color);
+
+    circle {
+        fill: var(--sun-color);
+        transition: fill var(--transition-speed) ease;
+    }
+
+    line {
+        stroke: var(--sun-color);
+        transition: stroke var(--transition-speed) ease;
+    }
+
+    html.dark & {
+        filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1));
+        color: var(--sun-color);
+
+        circle {
+            fill: var(--sun-color);
+        }
+
+        line {
+            stroke: var(--sun-color);
+        }
+    }
+}
+
+.moon-icon {
+    color: var(--moon-color);
+
+    path {
+        fill: var(--moon-color);
+        transition: fill var(--transition-speed) ease;
+    }
+
+    html.dark & {
+        opacity: 1;
+        filter: drop-shadow(0 0 3px var(--moon-color));
+        color: var(--moon-color);
+
+        path {
+            fill: var(--moon-color);
         }
     }
 }
 
 #sidebar {
     width: 16rem !important;
-    transition: all 0.7s ease-in-out allow-discrete;
+    /* transition: all 0.5s ease-in-out allow-discrete; */
 
     &:not(.collapsed) .menu-text {
         opacity: 1;
         display: block;
-        transition: all 0.7s ease-in allow-discrete;
+        transition: all 0.5s ease-in allow-discrete;
 
         @starting-style {
             opacity: 0;
@@ -32,13 +202,13 @@
         }
 
         #desktopMenuToggle {
-            padding-left: 0.2ch;
+            margin-left: -0.4ch;
         }
 
         .menu-text {
             display: none;
             opacity: 0;
-            transition: all 0.5s ease-out allow-discrete;
+            /* transition: all 0.5s ease-out allow-discrete; */
         }
 
         .menu-item {
@@ -123,9 +293,11 @@
 
 @media (width<768px) {
     #sidebar {
+        min-height: -webkit-fill-available;
+
         +* {
             position: absolute;
-            width: 100%;
+            min-width: 100%;
 
             #mobileMenuToggle {
                 position: relative;
@@ -139,7 +311,7 @@
             width: 16rem !important;
             display: block;
             opacity: 1;
-            transition: all 0.7s ease-in allow-discrete;
+            transition: all 0.5s ease-in allow-discrete;
 
             +* {
                 #mobileMenuToggle {
@@ -152,7 +324,7 @@
             width: 0px !important;
             display: none;
             opacity: 0;
-            transition: all 0.7s ease-out allow-discrete;
+            transition: all 0.5s ease-out allow-discrete;
 
             +* {
                 #mobileMenuToggle {
@@ -175,7 +347,7 @@
     }
 }
 
-@media (width>768px) {
+@media (width>=768px) {
     #sidebar:not(.collapsed) {
         .menu-hover-area {
             display: none;

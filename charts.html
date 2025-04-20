@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charts</title>
     <link rel="stylesheet" href="css/font-awesome.all.min.css">
-    <link rel="stylesheet" href="css/compiled.css">
     <link rel="stylesheet" href="css/flowbite.css">
+    <link rel="stylesheet" href="css/compiled.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <div class="flex min-h-screen">
-        <!-- Sidebar -->
         <aside id="sidebar"
-            class="sidebar-transition w-64 md:w-64 bg-white border-r border-gray-200 min-h-screen relative">
+            class="sidebar-transition w-64 md:w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 min-h-screen relative">
             <div class="px-4 py-5 flex items-center justify-between">
                 <div id="logo" class="flex items-center">
                     <div class="w-8 h-8">
@@ -28,9 +27,10 @@
                             <circle cx="50" cy="67" r="25" fill="#6BCB77" opacity="0.7" />
                         </svg>
                     </div>
-                    <span class="menu-text ml-3 text-xl font-semibold text-gray-800">Omniverse</span>
+                    <span class="menu-text ml-3 text-xl font-semibold text-gray-800 dark:text-gray-200">Omniverse</span>
                 </div>
-                <button id="desktopMenuToggle" class="p-2 rounded-lg text-gray-500 max-md:hidden">
+                <button id="desktopMenuToggle"
+                    class="p-2 rounded-lg text-gray-500 dark:text-gray-400 max-md:hidden bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -39,125 +39,136 @@
                 </button>
             </div>
             <div class="p-4">
-                <p class="menu-text text-gray-400 text-sm mb-2">Dashboard</p>
+                <p class="menu-text text-gray-400 dark:text-gray-500 text-sm mb-2">Dashboard</p>
                 <ul class="space-y-2">
                     <li class="menu-item hover-trigger">
-                        <a href="/" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <a href="/"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                             </svg>
                             <span class="menu-text ml-3">Overview</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Overview</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Overview</span>
                         </div>
                     </li>
-
-                    <p class="menu-text text-gray-400 text-sm mb-2">Components</p>
+                    <p class="menu-text text-gray-400 dark:text-gray-500 text-sm mb-2">Components</p>
                     <li class="menu-item hover-trigger">
-                        <a href="charts.html" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <a href="charts.html"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                             <span class="menu-text ml-3">Charts</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Charts</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Charts</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
-                        <a href="forms.html" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <a href="forms.html"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                             </svg>
                             <span class="menu-text ml-3">Forms</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Forms</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Forms</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
                         <a href="elements.html"
-                            class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                             </svg>
                             <span class="menu-text ml-3">Elements</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Elements</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Elements</span>
                         </div>
                     </li>
-
                     <li class="menu-item hover-trigger">
-                        <a href="modals.html" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <a href="modals.html"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                             </svg>
                             <span class="menu-text ml-3">Modals</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Modals</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Modals</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
-                        <a href="table.html" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                        <a href="table.html"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                             </svg>
                             <span class="menu-text ml-3">Table</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Table</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Table</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
                         <a href="notifications.html"
-                            class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                             </svg>
                             <span class="menu-text ml-3">Notifications</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Notifications</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Notifications</span>
                         </div>
                     </li>
-
-                    <p class="menu-text text-gray-400 text-sm mb-2">Other Menus</p>
-                    <!-- Add other menu items similarly -->
+                    <p class="menu-text text-gray-400 dark:text-gray-500 text-sm mb-2">Other Menus</p>
                     <li class="menu-item hover-trigger">
-                        <a href="#" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100">
-                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <a href="#"
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                                 </path>
                             </svg>
                             <span class="menu-text ml-3">Menu 1</span>
                         </a>
-                        <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Menu 1</span>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Menu 1</span>
                         </div>
                     </li>
                     <li class="menu-item menu-item-hover hover-trigger">
                         <a href="#"
-                            class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100 justify-between">
+                            class="flex items-center p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800 justify-between">
                             <div class="flex items-center">
-                                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor"
+                                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -170,40 +181,38 @@
                                     d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
-                        <!-- Hover-based submenu for collapsed state -->
                         <div class="menu-hover-area">
-                            <span class="block px-4 py-2 text-sm text-gray-700">Menu 2</span>
-                            <div class="submenu-hover">
-                                <ul class="bg-white py-1">
+                            <span class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white rounded-r-lg">Menu 2</span>
+                            <div class="bg-white dark:bg-gray-700 submenu-hover">
+                                <ul class="bg-white dark:bg-gray-700 py-1 rounded">
                                     <li><a href="#"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenu
+                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">Submenu
                                             2.1</a></li>
                                     <li><a href="#"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenu
+                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">Submenu
                                             2.2</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <!-- Click-based submenu for expanded state -->
                         <div class="submenu-click">
-                            <ul class="bg-white py-1">
-                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenu
-                                        2.1</a></li>
-                                <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Submenu
-                                        2.2</a></li>
-                            </ul>
-                        </div>
+                            <ul class="bg-gray-50 dark:bg-gray-700 py-1 mt-1 rounded">
+                               <li><a href="#"
+                                       class="block pl-11 pr-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Submenu
+                                       2.1</a></li>
+                               <li><a href="#"
+                                       class="block pl-11 pr-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 rounded">Submenu
+                                       2.2</a></li>
+                           </ul>
+                       </div>
                     </li>
                 </ul>
             </div>
         </aside>
-
-        <!-- Main Content -->
         <div id="main-content" class="flex-1">
-            <!-- Top Bar -->
             <header
-                class="bg-white p-4 flex items-center border-b border-gray-200 md:justify-end max-md:justify-between">
-                <button id="mobileMenuToggle" class="p-2 rounded-lg text-gray-500 md:hidden">
+                class="bg-white dark:bg-gray-800 p-4 flex items-center border-b border-gray-200 dark:border-gray-700 md:justify-end max-md:justify-between">
+                <button id="mobileMenuToggle"
+                    class="p-2 rounded-lg text-gray-500 dark:text-gray-400 md:hidden bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700">
                     <svg class="mobile-toggle-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -213,49 +222,75 @@
                     </svg>
                 </button>
                 <div class="flex items-center">
-                    <div class="flex items-center">
-                        <div class="relative">
-                            <!-- Search Input -->
-                            <input type="text" placeholder="Search..."
-                                class="bg-gray-100 rounded-full py-2 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <div class="relative mr-4">
+                        <input type="text" placeholder="Search..."
+                            class="bg-gray-100 dark:bg-gray-700 rounded-full py-2 px-4 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 dark:text-gray-200 dark:placeholder-gray-400 text-gray-900">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <i class="fa fa-search text-gray-400 dark:text-gray-500"></i>
                         </div>
-                        <div class="ml-4 relative">
-                            <button class="flex items-center text-gray-500 focus:outline-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </div>
+
+                    <div class="theme-toggle-container" title="Toggle Theme">
+                        <label class="toggle">
+                            <input type="checkbox" id="themeToggle">
+                            <div class="slider">
+                                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none" />
+                                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" />
+                                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" />
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" />
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" />
+                                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" />
+                                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" />
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" />
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" />
                                 </svg>
-                                <span
-                                    class="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs absolute -top-1 -right-1">3</span>
-                            </button>
-                        </div>
-                        <!-- User Profile -->
-                        <div class="ml-4">
-                            <button class="flex items-center focus:outline-none">
-                                <!-- <img src="/api/placeholder/40/40" alt="User" class="h-8 w-8 rounded-full object-cover"> -->
-                                <div
-                                    class="h-9 w-9 rounded-full object-cover bg-gray-200 flex items-center justify-center">
-                                    <i class="fa-regular fa-user"></i>
-                                </div>
-                                <span class="ml-2 text-sm font-medium text-gray-700 hidden md:block">John Doe</span>
-                            </button>
-                        </div>
+                                <div class="slider-icon"></div>
+                                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="none" fill="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="relative mr-4">
+                        <button
+                            class="flex items-center text-gray-500 dark:text-gray-400 focus:outline-none p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                            <span
+                                class="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs absolute -top-1 -right-1">3</span>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="flex items-center focus:outline-none">
+                            <div
+                                class="h-9 w-9 rounded-full object-cover bg-gray-200 dark:bg-gray-600 flex items-center justify-center text-gray-500 dark:text-gray-300">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <span class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300 hidden md:block">John
+                                Doe</span>
+                        </button>
                     </div>
                 </div>
             </header>
 
-            <!-- Content -->
             <main class="p-6">
-                <h1 class="text-2xl font-semibold text-gray-800 mb-6">Charts</h1>
+                <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Charts</h1>
                 <section id="charts-section" class="section">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                        <div class="bg-white rounded-lg shadow p-4">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
                             <div class="flex justify-between items-center mb-4">
-                                <h2 class="text-lg font-medium text-gray-800">Revenue Overview</h2>
+                                <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200">Revenue Overview</h2>
                                 <div>
                                     <select
-                                        class="text-sm border-gray-200 rounded py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                        class="text-sm bg-white text-gray-900 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 rounded py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400">
                                         <option>Last 7 Days</option>
                                         <option>Last 30 Days</option>
                                         <option>Last Quarter</option>
@@ -266,12 +301,12 @@
                             <div id="revenue-chart" class="h-64"></div>
                         </div>
 
-                        <div class="bg-white rounded-lg shadow p-4">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
                             <div class="flex justify-between items-center mb-4">
-                                <h2 class="text-lg font-medium text-gray-800">Traffic Sources</h2>
+                                <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200">Traffic Sources</h2>
                                 <div>
-                                    <select
-                                        class="text-sm border-gray-200 rounded py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                     <select
+                                        class="text-sm bg-white text-gray-900 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 rounded py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400">
                                         <option>Last 7 Days</option>
                                         <option>Last 30 Days</option>
                                         <option>Last Quarter</option>
@@ -294,12 +329,11 @@
         </div>
     </div>
 
+    <script src="js/theme.js"></script>
     <script src="js/apexcharts.js"></script>
     <script src="js/flowbite.js" defer></script>
     <script src="js/sidebar.js"></script>
     <script src="js/charts.js"></script>
     <script src="js/font-awesome.all.min.js"></script>
-
 </body>
-
 </html>
