@@ -344,7 +344,7 @@ html:not(.dark) {
             width: 1px;
             position-area: left;
             left: 100%;
-            background: var(--toggle-bg-light);
+            background: #e5e7eb;
         }
 
         .menu-hover-area {
