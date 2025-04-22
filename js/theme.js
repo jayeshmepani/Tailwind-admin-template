@@ -158,13 +158,13 @@ async function loadAndSwapMain(url) {
     }
 }
 
-document.querySelectorAll('#sidebar a[href$=".html"], a.internal-link').forEach(link => {
+document.querySelectorAll('#sidebar a').forEach(link => {
     if (link.origin !== window.location.origin) {
         return;
     }
     link.addEventListener('click', async e => {
         const url = link.href;
-        if (url === window.location.href) {
+        if (url === window.location.href && !link.hash) {
             e.preventDefault();
             return;
         }
@@ -173,9 +173,14 @@ document.querySelectorAll('#sidebar a[href$=".html"], a.internal-link').forEach(
             await loadAndSwapMain(url);
             return;
         }
-        await document.startViewTransition(async () => {
-            await loadAndSwapMain(url);
-        });
+        try { 
+            await document.startViewTransition(async () => {
+                await loadAndSwapMain(url);
+            });
+        } catch (error) {
+            console.error("View Transition failed:", error);
+            window.location.href = url; 
+        }
     });
 });
 
