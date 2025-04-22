@@ -152,7 +152,7 @@ class TableComponent {
                              <i class="fa fa-search text-gray-600 dark:text-gray-400"></i>
                          </div>
                          <input id="search-${this.options.containerId}" type="text" placeholder="Search..."
-                             class="block w-full pl-10 pr-3 py-2 border border-gray-400 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                             class="block w-full pl-10 pr-3 py-2 border border-gray-400 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 sm:text-sm text-black dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                      </div>` : ''}
                      <div class="inline-flex rounded-md shadow-sm" role="group">
                          ${this.options.enableRefresh ? `
@@ -328,8 +328,6 @@ class TableComponent {
             });
         }
 
-        console.log('Fetching data with params:', params);
-
         axios.get(url, { params: params })
             .then(response => {
                 let responseData = [];
@@ -503,9 +501,8 @@ class TableComponent {
         let actionTypeAttribute = action.type ? `data-action-type="${action.type}"` : '';
 
         let baseClasses = action.class || '';
-        let darkClasses = '';
 
-        buttonHtml = `<button ${actionTypeAttribute} class="${baseClasses} ${darkClasses}" type="button" ${combinedAttributes}>${action.icon ? `<i class="${action.icon}"></i> ` : ''}${action.label || ''}</button>`;
+        buttonHtml = `<button ${actionTypeAttribute} class="${baseClasses}" type="button" ${combinedAttributes}>${action.icon ? `<i class="${action.icon}"></i> ` : ''}${action.label || ''}</button>`;
 
         return buttonHtml;
     }
@@ -703,6 +700,7 @@ class TableComponent {
             return;
         }
 
+
         const totalPages = Math.ceil(totalItems / numericPageSize);
         const currentPageNum = parseInt(this.currentPage, 10);
 
@@ -727,6 +725,7 @@ class TableComponent {
         if (startPage === 1) {
             endPage = Math.min(totalPages, 5);
         }
+
 
         if (startPage > 1) {
             $paginationNumbers.append(`<button class="page-number flex items-center justify-center px-3 h-8 leading-tight text-gray-600 bg-white border border-gray-400 hover:bg-gray-200 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" data-page="1">1</button>`);
@@ -776,6 +775,7 @@ class TableComponent {
 
         if (start > end && totalItems > 0) start = end;
         if (totalItems === 0) { start = 0; end = 0; }
+
 
         $pageInfo.text(`Showing ${start} to ${end} of ${totalItems} entries`);
     }
@@ -1012,6 +1012,7 @@ class TableComponent {
         this.container.on(`change${eventNamespace}`, `#select-all-${containerId}`, this.handleSelectAllChange.bind(this));
         this.container.on(`change${eventNamespace}`, '.row-checkbox', this.handleRowCheckboxChange.bind(this));
 
+
         this.container.on(`click${eventNamespace}`, 'button[data-item-id]', (event) => {
             const $button = $(event.currentTarget);
             const itemId = $button.data('item-id');
@@ -1019,6 +1020,7 @@ class TableComponent {
             const actionMethod = $button.data('action-method');
             const actionRoute = $button.data('action-route');
             const actionRouteTemplate = $button.data('action-route-template');
+
 
             if (modalTargetId) {
                 if (modalTargetId === this.deleteModalId && itemId !== undefined) {
@@ -1484,7 +1486,7 @@ class TableComponent {
                     <div class="col-span-1">
                         <label for="${fieldId}" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">${column.title}</label>
                         <input type="text" id="${fieldId}" name="${column.field}" value="${escapedValue}"
-                          class="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          class="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-white text-gray-900 placeholder-gray-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                          <div class="edit-field-error text-red-500 dark:text-red-400 text-xs mt-1" data-field-error="${column.field}"></div>
                     </div>
               `);
