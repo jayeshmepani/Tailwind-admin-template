@@ -1,3 +1,5 @@
+@layer dark-theme;
+
 :root {
     interpolate-size: allow-keywords;
 
@@ -334,24 +336,41 @@ html.dark {
     }
 }
 
-html:not(.dark) {
-    #sidebar:is(.collapsed) {
 
-        &::after {
-            content: '';
-            position: absolute;
-            min-height: 100%;
-            width: 1px;
-            position-area: left;
-            left: 100%;
-            background: #e5e7eb;
+@layer light-theme {
+    html:not(.dark) {
+        #sidebar:is(.collapsed) {
+
+            &::after {
+                content: '';
+                position: absolute;
+                min-height: 100%;
+                width: 1px;
+                position-area: left;
+                left: 100%;
+                background: #e5e7eb !important;
+            }
+
+            .menu-hover-area {
+                border: 2px solid var(--toggle-bg-light);
+
+                span {
+                    border-radius: 0 100vh 100vh 0;
+                }
+            }
         }
 
-        .menu-hover-area {
-            border: 2px solid var(--toggle-bg-light);
+        .submenu-click.open {
 
-            span {
-                border-radius: 0 100vh 100vh 0;
+            ul {
+                border-left: 1px solid oklch(37.3% 0.034 259.733) !important;
+                &::before {
+                    background-color: white !important;
+                }
+            }
+
+            li::before {
+                background-color: oklch(37.3% 0.034 259.733) !important;
             }
         }
     }
@@ -372,8 +391,42 @@ html:not(.dark) {
     &.open {
         max-height: fit-content;
         transition: max-height 0.5s ease-in allow-discrete;
+
+        ul {
+            border-left: 1px solid oklch(87.2% 0.01 258.338);
+            border-radius: 0;
+            margin-left: -1rem;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0%;
+                left: -1px;
+                width: 1px;
+                height: 17px;
+                background-color: #1e2939;
+            }
+
+            li {
+                position: relative;
+                height: auto;
+            }
+
+            li::before {
+                content: '';
+                position: absolute;
+                top: 18px;
+                left: 0;
+                width: 1.25rem;
+                height: 1px;
+                background-color: oklch(87.2% 0.01 258.338);
+            }
+        }
+
     }
 }
+
 
 .submenu-arrow {
     transition: transform 0.3s ease allow-discrete;
@@ -419,7 +472,7 @@ html:not(.dark) {
 
             +* {
                 #mobileMenuToggle {
-                    transform: translateX(10rem);
+                    transform: translateX(9.1rem);
                 }
             }
         }
