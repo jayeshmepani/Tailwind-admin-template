@@ -364,6 +364,7 @@ html.dark {
 
             ul {
                 border-left: 1px solid oklch(37.3% 0.034 259.733) !important;
+
                 &::before {
                     background-color: white !important;
                 }
@@ -406,6 +407,13 @@ html.dark {
                 width: 1px;
                 height: 17px;
                 background-color: #1e2939;
+
+                /* @media (width<768px) {
+                    bottom: -1% !important;
+                    width: 2px !important;
+                    filter: brightness(9) contrast(9) grayscale(1) !important;
+                    backdrop-filter: brightness(9) contrast(9) grayscale(1) !important;
+                } */
             }
 
             li {
@@ -501,6 +509,29 @@ html.dark {
 
     .menu-hover-area {
         display: none;
+    }
+
+    html:not(.dark) {
+        .submenu-click.open {
+
+            ul {
+                border-left: 1px solid oklch(37.3% 0.034 259.733) !important;
+
+                &::before {
+                    background-color: white !important;
+
+                    bottom: -1%;
+                    width: 2px;
+                    filter: brightness(9) contrast(9) grayscale(1);
+                    backdrop-filter: brightness(9) contrast(9) grayscale(1);
+
+                }
+            }
+
+            li::before {
+                background-color: oklch(37.3% 0.034 259.733) !important;
+            }
+        }
     }
 }
 
