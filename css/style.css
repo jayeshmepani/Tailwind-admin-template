@@ -229,7 +229,7 @@ html.dark {
 }
 
 #sidebar {
-    width: 16rem !important;
+    width: calc-size(max-content, size + 1rem) !important;
     /* transition: all 0.5s ease-in-out allow-discrete; */
 
     &:not(.collapsed) .menu-text {
@@ -396,6 +396,8 @@ html:not(.dark) {
 @media (width<768px) {
     #sidebar {
         min-height: -webkit-fill-available;
+        min-height: -moz-available;
+        min-height: fill-available;
 
         +* {
             position: absolute;
@@ -410,14 +412,14 @@ html:not(.dark) {
         &[style="width: 16rem;"] {
             z-index: 9999;
             position: fixed;
-            width: 16rem !important;
+            width: calc-size(max-content, size + 1rem) !important;
             display: block;
             opacity: 1;
             transition: all 0.5s ease-in allow-discrete;
 
             +* {
                 #mobileMenuToggle {
-                    transform: translateX(12rem);
+                    transform: translateX(10rem);
                 }
             }
         }
