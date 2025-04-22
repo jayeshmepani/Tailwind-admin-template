@@ -57,7 +57,7 @@
                         <div
                             class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                             <span
-                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white">Overview</span>
+                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-1.5 text-gray-700 text-sm bg-white">Overview</span>
                         </div>
                     </li>
                     <p class="menu-text text-gray-400 dark:text-gray-500 text-sm mb-2">
@@ -76,7 +76,7 @@
                         <div
                             class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                             <span
-                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white">Charts</span>
+                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-1.5 text-gray-700 text-sm bg-white">Charts</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
@@ -92,7 +92,7 @@
                         <div
                             class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                             <span
-                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white">Forms</span>
+                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-1.5 text-gray-700 text-sm bg-white">Forms</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
@@ -108,7 +108,7 @@
                         <div
                             class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                             <span
-                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white">Elements</span>
+                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-1.5 text-gray-700 text-sm bg-white">Elements</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
@@ -124,7 +124,7 @@
                         <div
                             class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                             <span
-                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white">Modals</span>
+                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-1.5 text-gray-700 text-sm bg-white">Modals</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
@@ -140,7 +140,7 @@
                         <div
                             class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                             <span
-                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white">Table</span>
+                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-1.5 text-gray-700 text-sm bg-white">Table</span>
                         </div>
                     </li>
                     <li class="menu-item hover-trigger">
@@ -156,7 +156,7 @@
                         <div
                             class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                             <span
-                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white">Notifications</span>
+                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-1.5 text-gray-700 text-sm bg-white">Notifications</span>
                         </div>
                     </li>
                     <p class="menu-text text-gray-400 dark:text-gray-500 text-sm mb-2">
@@ -176,7 +176,7 @@
                         <div
                             class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                             <span
-                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white">Menu
+                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-1.5 text-gray-700 text-sm bg-white">Menu
                                 1</span>
                         </div>
                     </li>
@@ -199,7 +199,7 @@
                         </a>
                         <div class="menu-hover-area">
                             <span
-                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-2 text-gray-700 text-sm bg-white">Menu
+                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-1.5 text-gray-700 text-sm bg-white">Menu
                                 2</span>
                             <div class="bg-white dark:bg-gray-700 submenu-hover">
                                 <ul class="bg-white dark:bg-gray-700 py-1 rounded">
@@ -333,46 +333,46 @@
     <script src="js/font-awesome.all.min.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="js/theme.js"></script>
-    
+
     <script id="page-init-script">
-     $(document).ready(function () {
-        new TableComponent({
-            containerId: "my-table-container",
-            dataUrl: "test.json",
-            //serverSide: true, // Uncomment for server-side processing
-            pageSizeOptions: [5, 10, 25, 50, "All"],
-            defaultPageSize: 10,
-            enableSearch: true,
-            enableColumnsDropdown: true,
-            enableExportDropdown: true,
-            enableFullscreen: true,
-            enableViewToggle: true,
-            enableDelete: true,
-            enableRefresh: true,
-            editable: true,
-            customActions: [
-                {
-                    type: "button",
-                    class:
-                        "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-xs", // Your custom class
-                    icon: "fa fa-edit",
-                    label: "Edit",
-                    modalId: "edit-modal-container",
-                    // route: '/your/api/items/{id}' // Optional here, saveEdit uses main option
-                },
-                {
-                    type: "modal",
-                    class:
-                        "bg-red-600 hover:bg-red-700 text-white py-1 px-2 rounded text-xs focus:outline-none transition-colors duration-200", // Your custom class
-                    icon: "fa fa-trash",
-                    label: "Delete",
-                    modalId: "delete-modal",
-                    //method: 'DELETE', // <-- Add HTTP method
-                    //route: '/your/api/items/{id}' // <-- Add the route template (matches options.deleteRoute)
-                },
-            ],
+        $(document).ready(function () {
+            new TableComponent({
+                containerId: "my-table-container",
+                dataUrl: "test.json",
+                //serverSide: true, // Uncomment for server-side processing
+                pageSizeOptions: [5, 10, 25, 50, "All"],
+                defaultPageSize: 10,
+                enableSearch: true,
+                enableColumnsDropdown: true,
+                enableExportDropdown: true,
+                enableFullscreen: true,
+                enableViewToggle: true,
+                enableDelete: true,
+                enableRefresh: true,
+                editable: true,
+                customActions: [
+                    {
+                        type: "button",
+                        class:
+                            "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-xs", // Your custom class
+                        icon: "fa fa-edit",
+                        label: "Edit",
+                        modalId: "edit-modal-container",
+                        // route: '/your/api/items/{id}' // Optional here, saveEdit uses main option
+                    },
+                    {
+                        type: "modal",
+                        class:
+                            "bg-red-600 hover:bg-red-700 text-white py-1 px-2 rounded text-xs focus:outline-none transition-colors duration-200", // Your custom class
+                        icon: "fa fa-trash",
+                        label: "Delete",
+                        modalId: "delete-modal",
+                        //method: 'DELETE', // <-- Add HTTP method
+                        //route: '/your/api/items/{id}' // <-- Add the route template (matches options.deleteRoute)
+                    },
+                ],
+            });
         });
-    });
     </script>
 
 
