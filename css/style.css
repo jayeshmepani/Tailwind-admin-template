@@ -327,7 +327,7 @@ main {
 }
 
 #sidebar {
-    width: calc-size(max-content, size + 1.3rem) !important;
+    width: 15rem !important;
     /* transition: all 0.5s ease-in-out allow-discrete; */
 
     &:not(.collapsed) .menu-text {
@@ -338,6 +338,10 @@ main {
         @starting-style {
             opacity: 0;
         }
+    }
+
+    #desktopMenuToggle {
+        outline: 1px solid;
     }
 
     &:is(.collapsed) {
@@ -596,17 +600,18 @@ div#profileDropdown {
             }
         }
 
-        &[style="width: 16rem;"] {
+        &[style="width: 15rem;"] {
             z-index: 9999;
             position: fixed;
-            width: calc-size(max-content, size + 1.3rem) !important;
+            width: 15rem !important;
             display: block;
             opacity: 1;
             transition: all 0.5s ease-in allow-discrete;
 
             +* {
                 #mobileMenuToggle {
-                    transform: translateX(10rem);
+                    transform: translateX(11rem);
+                    outline: 1px solid;
                 }
             }
         }
@@ -620,6 +625,7 @@ div#profileDropdown {
             +* {
                 #mobileMenuToggle {
                     transform: translateX(0rem);
+                    outline: 1px solid;
                 }
             }
         }

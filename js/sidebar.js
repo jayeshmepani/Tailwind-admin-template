@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function toggleSidebarMobile() {
         const isSidebarHidden = sidebar.style.width === '0px';
-        sidebar.style.width = isSidebarHidden ? '16rem' : '0px';
+        sidebar.style.width = isSidebarHidden ? '15rem' : '0px';
         menuIcon.classList.toggle('hidden');
         closeIcon.classList.toggle('hidden');
         mobileToggleIcon.classList.toggle('mobile-toggle-active');
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
-            sidebar.style.width = isSidebarCollapsed ? '4rem' : '16rem';
+            sidebar.style.width = isSidebarCollapsed ? '4rem' : '15rem';
             if (isSidebarCollapsed) sidebar.classList.add("collapsed");
         } else {
             if (sidebar.classList.contains('collapsed')) sidebar.classList.remove('collapsed');
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (window.innerWidth >= 768) {
-        sidebar.style.width = '16rem';
+        sidebar.style.width = '';
     } else {
         sidebar.style.width = '0px';
         menuIcon.classList.remove('hidden');
