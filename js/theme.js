@@ -30,17 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//view-transition script
+// view-transition
 let lastClick = null;
 document.addEventListener('click', e => lastClick = { x: e.clientX, y: e.clientY });
 
 let previousUrl = window.location.href;
+const mainContentSelector = '#main-content > main';
+const mainContentTransitionName = 'main-area-transition';
 
-async function loadAndSwapMain(url) {
+async function loadAndSwapMainContent(url) {
     try {
         const resp = await fetch(url);
         if (!resp.ok) {
-            console.error(`Failed to fetch ${url}: ${resp.statusText}`);
             window.location.href = url;
             return;
         }
@@ -48,175 +49,240 @@ async function loadAndSwapMain(url) {
         const parser = new DOMParser();
         const doc = parser.parseFromString(text, 'text/html');
 
-        const newMainContainer = doc.querySelector('#main-content');
-        const currentMainContainer = document.querySelector('#main-content');
+        const newMainElement = doc.querySelector(mainContentSelector);
+        const currentMainElement = document.querySelector(mainContentSelector);
 
-        if (!newMainContainer || !currentMainContainer) {
-            console.error('Could not find #main-content container.');
+        if (!newMainElement) {
+            console.error(`Could not find new main element ('${mainContentSelector}') in fetched document for ${url}. Check page structure. Falling back.`);
+            window.location.href = url;
+            return;
+        }
+        if (!currentMainElement) {
+            console.error(`Could not find current main element ('${mainContentSelector}') in current document. Check page structure. Falling back.`);
             window.location.href = url;
             return;
         }
 
-        const newMain = newMainContainer.querySelector('main');
-        const currentMain = currentMainContainer.querySelector('main');
-
-        if (!newMain || !currentMain) {
-            console.error('Could not find <main> element.');
-            window.location.href = url;
-            return;
+        const newTitle = doc.querySelector('title')?.textContent;
+        if (newTitle && document.title !== newTitle) {
+            document.title = newTitle;
         }
 
-        currentMain.replaceWith(newMain);
+        currentMainElement.replaceWith(newMainElement);
 
         if (typeof initFlowbite === 'function') {
-            initFlowbite();
+            setTimeout(() => {
+                initFlowbite();
+                if (typeof initializeSidebar === 'function') initializeSidebar();
+                if (typeof initializeThemeToggle === 'function') initializeThemeToggle();
+            }, 50);
         }
 
         const pageInitScriptElement = doc.querySelector('#page-init-script');
-
         if (pageInitScriptElement) {
-            if (pageInitScriptElement.src && !pageInitScriptElement.textContent) {
+            const scriptToExecute = pageInitScriptElement.cloneNode(true);
+
+            if (scriptToExecute.src && !scriptToExecute.textContent) {
                 try {
                     const script = document.createElement('script');
                     try {
-                        script.src = new URL(pageInitScriptElement.src, doc.baseURI || url).href;
+                        script.src = new URL(scriptToExecute.src, doc.baseURI || url).href;
                     } catch (urlError) {
-                        console.error("Error constructing absolute URL for script, falling back to original src:", pageInitScriptElement.src, urlError);
-                        script.src = pageInitScriptElement.src;
+                        script.src = scriptToExecute.src;
                     }
-
-                    if (pageInitScriptElement.type) {
-                        script.type = pageInitScriptElement.type;
-                    }
+                    if (scriptToExecute.type) script.type = scriptToExecute.type;
                     script.async = false;
 
-                    script.onload = () => {
-                        if (typeof initFlowbite === 'function') {
-                            setTimeout(() => { initFlowbite(); }, 50);
-                        }
-                    };
-                    script.onerror = () => {
-                        console.error('Error loading dynamically added script:', script.src);
-                    };
-
+                    script.onload = () => { };
+                    script.onerror = () => console.error('Error loading dynamically added script:', script.src);
                     document.body.appendChild(script);
-                    // Optionally remove the script tag after loading if it causes issues, but usually not needed for external scripts
-                    // document.body.removeChild(script) might remove before execution completes
 
                 } catch (e) {
-                    console.error("Error creating/appending dynamic script tag:", e);
+                    console.error("Error creating/appending dynamic external script tag:", e);
                 }
-            } else if (pageInitScriptElement.textContent) {
+            } else if (scriptToExecute.textContent) {
                 try {
                     let dependencyError = false;
-                    if (pageInitScriptElement.textContent.includes('$') && typeof $ === 'undefined') {
-                        console.error("jQuery ($) not defined for inline script execution.");
-                        dependencyError = true;
-                    }
-                    if (pageInitScriptElement.textContent.includes('new TableComponent') && typeof TableComponent === 'undefined') {
-                        console.error("TableComponent not defined for inline script execution.");
-                        dependencyError = true;
-                    }
-                    if (pageInitScriptElement.textContent.includes('ApexCharts') && typeof ApexCharts === 'undefined') {
-                        console.error("ApexCharts not defined for inline script execution.");
-                        dependencyError = true;
-                    }
-                    if (pageInitScriptElement.textContent.includes('toastr') && typeof toastr === 'undefined') {
-                        console.error("toastr not defined for inline script execution.");
-                        dependencyError = true;
-                    }
+                    const scriptContent = scriptToExecute.textContent;
+                    if (scriptContent.includes('$') && typeof $ === 'undefined') { dependencyError = true; console.error("Dependency Error: jQuery ($) not defined for inline script."); }
+                    if (scriptContent.includes('new TableComponent') && typeof TableComponent === 'undefined') { dependencyError = true; console.error("Dependency Error: TableComponent not defined for inline script."); }
+                    if (scriptContent.includes('ApexCharts') && typeof ApexCharts === 'undefined') { dependencyError = true; console.error("Dependency Error: ApexCharts not defined for inline script."); }
+                    if (scriptContent.includes('toastr') && typeof toastr === 'undefined') { dependencyError = true; console.error("Dependency Error: toastr not defined for inline script."); }
 
                     if (!dependencyError) {
-                        const scriptContent = pageInitScriptElement.textContent.trim();
                         const script = document.createElement('script');
-                        script.textContent = scriptContent;
-
+                        script.textContent = scriptContent.trim();
                         document.body.appendChild(script);
-                        document.body.removeChild(script); // Clean up inline script execution tag
-
-                        if (typeof initFlowbite === 'function') {
-                            setTimeout(() => { initFlowbite(); }, 50);
-                        }
+                        document.body.removeChild(script);
+                    } else {
+                        // Dependency error already logged
                     }
                 } catch (e) {
                     console.error("Error executing inline page-specific init script:", e);
                 }
             }
-        } else {
-            // No #page-init-script found, maybe re-init flowbite just in case? (Already done above)
-            // if (typeof initFlowbite === 'function') { initFlowbite(); }
         }
 
         if (window.location.href !== url) {
             history.pushState({}, '', url);
             previousUrl = url;
+        } else {
+            previousUrl = url;
         }
 
+        updateSidebarActiveState(url);
+
     } catch (error) {
-        console.error('Error during loadAndSwapMain:', error);
+        console.error('Error during loadAndSwapMainContent:', error);
         window.location.href = url;
     }
 }
 
-document.querySelectorAll('a').forEach(link => { // replace '#sidebar a' if you only want transition from sidebar links
-    if (link.origin !== window.location.origin) {
+async function handleNavigation(url) {
+    const currentUrlObj = new URL(window.location.href);
+    const targetUrlObj = new URL(url);
+    if (currentUrlObj.origin === targetUrlObj.origin && currentUrlObj.pathname === targetUrlObj.pathname && currentUrlObj.search === targetUrlObj.search) {
+        if (currentUrlObj.hash === targetUrlObj.hash || !targetUrlObj.hash) {
+            return;
+        }
+        if (window.location.href !== url) {
+            history.pushState({}, '', url);
+            previousUrl = url;
+        }
+        if (targetUrlObj.hash) {
+            const element = document.querySelector(targetUrlObj.hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
         return;
     }
-    link.addEventListener('click', async e => {
+
+    if (!document.startViewTransition) {
+        await loadAndSwapMainContent(url);
+        return;
+    }
+
+    try {
+        await document.startViewTransition(async () => {
+            await loadAndSwapMainContent(url);
+        });
+    } catch (error) {
+        console.error("View Transition failed:", error);
+        window.location.href = url;
+    }
+}
+
+function updateSidebarActiveState(currentUrlString) {
+    const sidebarLinks = document.querySelectorAll('#sidebar a');
+    try {
+        const currentUrlObj = new URL(currentUrlString);
+        const currentPath = currentUrlObj.pathname;
+
+        sidebarLinks.forEach(link => {
+            const menuItem = link.closest('.menu-item');
+            if (!menuItem) return;
+
+            const rawHref = link.getAttribute('href');
+
+            if (rawHref === null || rawHref.trim() === '' || rawHref.startsWith('#') || rawHref.toLowerCase().startsWith('javascript:')) {
+                menuItem.classList.remove('sidebar-active');
+                return;
+            }
+
+            try {
+                const linkUrl = new URL(link.href, document.baseURI);
+                const linkPath = linkUrl.pathname;
+
+                let isActive = (linkPath === currentPath);
+                isActive = isActive || (linkPath === '/' && currentPath.endsWith('/index.html'));
+                isActive = isActive || (currentPath === '/' && linkPath.endsWith('/index.html'));
+
+                if (isActive) {
+                    menuItem.classList.add('sidebar-active');
+
+                    const submenu = menuItem.closest('.submenu-click');
+                    if (submenu && !submenu.classList.contains('open')) {
+                        const parentMenuItem = submenu.closest('.menu-item.menu-item-hover');
+                        const triggerLink = parentMenuItem?.querySelector('a:not([href^="#"]):not([href=""])');
+                        if (triggerLink && !parentMenuItem.classList.contains('submenu-open')) {
+                            // Potentially trigger click or add class here if needed for auto-expansion
+                            // triggerLink.click();
+                            // parentMenuItem.classList.add('submenu-open');
+                        }
+                    }
+                } else {
+                    menuItem.classList.remove('sidebar-active');
+                }
+            } catch (e) {
+                console.warn(`Could not parse link href: ${link.href}`, e);
+                menuItem.classList.remove('sidebar-active');
+            }
+        });
+    } catch (e) {
+        console.error(`Could not parse current URL: ${currentUrlString}`, e);
+        sidebarLinks.forEach(link => {
+            const menuItem = link.closest('.menu-item');
+            if (menuItem) menuItem.classList.remove('sidebar-active');
+        });
+    }
+}
+
+document.addEventListener('click', async (e) => {
+    const link = e.target.closest('a');
+
+    if (link && link.href && link.origin === window.location.origin) {
         const url = link.href;
+
+        if (link.closest('#profileDropdown') || link.closest('.submenu-click') || link.closest('.menu-hover-area')) {
+            if (link.closest('.submenu-click a') && link.href !== '#') {
+                // Allow submenu page links
+            } else {
+                // Ignore clicks on toggles/non-page links within these areas
+                return;
+            }
+        }
+
         if (url === window.location.href && !link.hash) {
             e.preventDefault();
             return;
         }
-        e.preventDefault();
-        if (!document.startViewTransition) {
-            await loadAndSwapMain(url);
+
+        if (link.hasAttribute('data-no-spa') || link.getAttribute('target') === '_blank') {
             return;
         }
-        try {
-            await document.startViewTransition(async () => {
-                await loadAndSwapMain(url);
-            });
-        } catch (error) {
-            console.error("View Transition failed:", error);
-            window.location.href = url;
-        }
-    });
+
+        e.preventDefault();
+        await handleNavigation(url);
+    }
 });
 
 window.addEventListener('popstate', async (event) => {
     const currentUrl = window.location.href;
     if (currentUrl !== previousUrl) {
-        if (document.startViewTransition) {
-            await document.startViewTransition(async () => {
-                await loadAndSwapMain(currentUrl);
-            });
-        } else {
-            await loadAndSwapMain(currentUrl);
-        }
-        previousUrl = currentUrl;
+        await handleNavigation(currentUrl);
     }
 });
 
 if (!window.pageSwapListenerAdded) {
     window.addEventListener('pageswap', e => {
         if (!e.viewTransition) return;
-        const mainElement = document.querySelector('#main-content > main');
+        const mainElement = document.querySelector(mainContentSelector);
         if (mainElement) {
-            mainElement.style.viewTransitionName = 'main-content-transition';
+            mainElement.style.viewTransitionName = mainContentTransitionName;
+        } else {
+            console.warn(`Pageswap: Could not find '${mainContentSelector}' to assign transition name.`);
         }
     });
     window.pageSwapListenerAdded = true;
 }
+
 if (!window.pageRevealListenerAdded) {
     window.addEventListener('pagereveal', e => {
         if (!e.viewTransition) return;
         e.viewTransition.ready.then(() => {
-            const mainElement = document.querySelector('#main-content > main');
-            if (mainElement) {
-                // Optionally clear name after transition
-                // mainElement.style.viewTransitionName = '';
-            }
+            const mainElement = document.querySelector(mainContentSelector);
+            if (mainElement) mainElement.style.viewTransitionName = '';
         });
     });
     window.pageRevealListenerAdded = true;
@@ -226,5 +292,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof initFlowbite === 'function') {
         initFlowbite();
     }
+    if (typeof initializeSidebar === 'function') {
+        initializeSidebar();
+    }
+    if (typeof initializeThemeToggle === 'function') {
+        initializeThemeToggle();
+    }
+
     previousUrl = window.location.href;
+    updateSidebarActiveState(previousUrl);
 });
