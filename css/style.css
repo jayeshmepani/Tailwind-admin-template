@@ -396,7 +396,7 @@ main {
             width: max-content;
             background: white;
             /* border-width: 2px; */
-            border: 2px solid hsl(217, 21%, 27%);
+            border: 2.4px solid #1f2937;
             border-radius: 0 0.45rem 0.45rem 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 50;
@@ -407,6 +407,7 @@ main {
 
                 span {
                     border-top-right-radius: 4px;
+                    background-color: #1f2937;
                 }
 
                 .submenu-hover {
@@ -416,7 +417,8 @@ main {
             }
 
             span {
-                border-radius: 0;
+                border-radius: 0 2px 2px 0;
+                background-color: #1f2937;
             }
 
             .submenu-hover {
@@ -451,10 +453,11 @@ main {
         }
 
         .menu-hover-area {
-            border: 2px solid var(--toggle-bg-light);
+            border: 2.4px solid var(--toggle-bg-light);
 
             span {
                 border-radius: 0 100vh 100vh 0;
+                background-color: #fff !important;
             }
         }
     }
