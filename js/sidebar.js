@@ -75,4 +75,21 @@ document.addEventListener("DOMContentLoaded", function () {
         trigger.addEventListener('mouseleave', hideHoverArea);
         hoverArea.addEventListener('mouseleave', hideHoverArea);
     });
+
+    const logoutButton = document.getElementById('logoutButton');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            if (typeof toastr !== 'undefined') {
+                toastr.success('You have been logged out.', 'Logout Successful');
+            } else {
+                alert('You have been logged out.');
+            }
+
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 1500);
+        });
+    }
 });

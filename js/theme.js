@@ -158,7 +158,7 @@ async function loadAndSwapMain(url) {
     }
 }
 
-document.querySelectorAll('#sidebar a').forEach(link => {
+document.querySelectorAll('a').forEach(link => { // replace '#sidebar a' if you only want transition from sidebar links
     if (link.origin !== window.location.origin) {
         return;
     }
@@ -173,13 +173,13 @@ document.querySelectorAll('#sidebar a').forEach(link => {
             await loadAndSwapMain(url);
             return;
         }
-        try { 
+        try {
             await document.startViewTransition(async () => {
                 await loadAndSwapMain(url);
             });
         } catch (error) {
             console.error("View Transition failed:", error);
-            window.location.href = url; 
+            window.location.href = url;
         }
     });
 });

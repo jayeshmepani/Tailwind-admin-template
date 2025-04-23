@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - Omniverse</title>
+    <link rel="stylesheet" href="css/font-awesome.all.min.css" />
+    <link rel="stylesheet" href="css/toastr.min.css">
+    <link rel="stylesheet" href="css/flowbite.css" />
+    <link rel="stylesheet" href="css/compiled.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body
+    class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-slate-900 min-h-screen relative overflow-hidden">
+
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div id="stars" class="absolute inset-0"></div>
+        <div id="light-pattern" class="absolute inset-0"></div>
+    </div>
+
+    <div class="theme-toggle-container absolute top-3 right-3 z-20" title="Toggle Theme">
+        <label class="toggle">
+            <input type="checkbox" id="themeToggle" />
+            <div class="slider">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none" />
+                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" />
+                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" />
+                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" />
+                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" />
+                </svg>
+                <div class="slider-icon"></div>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="none" fill="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                </svg>
+            </div>
+        </label>
+    </div>
+
+    <section class="flex flex-col items-center justify-center px-6 py-8 mx-auto min-h-screen lg:py-0 relative z-10">
+        <a href="#" class="flex items-center mb-6 group">
+            <div class="w-9 h-9 mr-2.5 transition-transform duration-300 ease-in-out group-hover:scale-110">
+                <svg viewBox="0 0 100 100" class="w-full h-full">
+                    <circle cx="33" cy="33" r="25" class="fill-indigo-500 transition-colors duration-500" />
+                    <circle cx="67" cy="33" r="25" class="fill-blue-500 transition-colors duration-700" />
+                    <circle cx="50" cy="67" r="25" class="fill-sky-500 transition-colors duration-900" />
+                    <circle cx="33" cy="33" r="25" class="fill-indigo-500/70 transition-colors duration-500" />
+                    <circle cx="67" cy="33" r="25" class="fill-blue-500/70 transition-colors duration-700" />
+                    <circle cx="50" cy="67" r="25" class="fill-sky-500/70 transition-colors duration-900" />
+                </svg>
+            </div>
+            <span
+                class="self-center text-2xl font-semibold whitespace-nowrap text-gray-800 dark:text-white">Omniverse</span>
+        </a>
+
+        <div
+            class="w-full bg-white rounded-xl shadow-xl dark:shadow-slate-800 border border-gray-100 dark:border-gray-700 md:mt-0 sm:max-w-md dark:bg-gray-800">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1
+                    class="text-xl font-bold leading-tight tracking-tight text-center text-gray-900 md:text-2xl dark:text-white">
+                    Sign in to your account
+                </h1>
+                <form class="space-y-4 md:space-y-6" action="#" id="login-form">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                            email</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <i class="fa-regular fa-envelope text-gray-400 dark:text-gray-500 w-4 h-4"></i>
+                            </div>
+                            <input type="email" name="email" id="email"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 transition duration-150 ease-in-out"
+                                placeholder="name@company.com" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="password"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <i class="fa-solid fa-lock text-gray-400 dark:text-gray-500 w-4 h-4"></i>
+                            </div>
+                            <input type="password" name="password" id="password" placeholder="••••••••"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 transition duration-150 ease-in-out"
+                                required>
+                            <button type="button" id="password-toggle"
+                                class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 focus:outline-none text-gray-400 dark:text-gray-500">
+                                <svg id="show-password" class="w-5 h-5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                    </path>
+                                </svg>
+                                <svg id="hide-password" class="w-5 h-5 hidden" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="remember" aria-describedby="remember" type="checkbox"
+                                class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-indigo-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-indigo-600 dark:ring-offset-gray-800 ring-offset-gray-200">
+                            <label for="remember"
+                                class="ml-3 text-sm font-light text-gray-500 dark:text-gray-300">Remember me</label>
+                        </div>
+                        <a href="#"
+                            class="text-sm font-medium text-indigo-600 hover:underline dark:text-indigo-500">Forgot
+                            password?</a>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full text-white bg-gradient-to-r from-indigo-600 to-blue-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-md hover:shadow-lg dark:shadow-blue-900/40 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-all duration-300 ease-in-out transform hover:-translate-y-0.5">
+                        Sign in
+                    </button>
+
+                    <div class="flex items-center pt-2">
+                        <div class="flex-grow border-t border-gray-200 dark:border-gray-600"></div>
+                        <span class="flex-shrink mx-4 text-sm text-gray-400 dark:text-gray-500">Or sign in with</span>
+                        <div class="flex-grow border-t border-gray-200 dark:border-gray-600"></div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-3">
+                        <button type="button"
+                            class="flex items-center justify-center w-full py-2.5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 transition duration-150 ease-in-out">
+                            <i class="fa-brands fa-google text-red-500 w-5 h-5"></i>
+                        </button>
+                        <button type="button"
+                            class="flex items-center justify-center w-full py-2.5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 transition duration-150 ease-in-out">
+                            <i class="fa-brands fa-apple text-gray-700 dark:text-gray-300 w-5 h-5"></i>
+                        </button>
+                        <button type="button"
+                            class="flex items-center justify-center w-full py-2.5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 transition duration-150 ease-in-out">
+                            <i class="fa-brands fa-microsoft text-blue-500 w-5 h-5"></i>
+                        </button>
+                    </div>
+
+                    <p class="text-sm font-light text-center text-gray-500 dark:text-gray-400 pt-2">
+                        Don’t have an account yet? <a href="#"
+                            class="font-medium text-indigo-600 hover:underline dark:text-indigo-500">Sign up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <p class="mt-6 text-center text-xs text-gray-500 dark:text-gray-400">
+            © 2024 Omniverse. All rights reserved.
+        </p>
+    </section>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/toastr.min.js"></script>
+    <script src="js/flowbite.js" defer></script>
+    <script src="js/font-awesome.all.min.js"></script>
+    <script src="js/theme.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const starsContainer = document.getElementById('stars');
+            if (document.documentElement.classList.contains('dark')) {
+                if (starsContainer) {
+                    const starCount = 100;
+                    for (let i = 0; i < starCount; i++) {
+                        const star = document.createElement('div');
+                        star.classList.add('absolute', 'bg-white', 'rounded-full');
+                        const size = Math.random() * 2 + 1;
+                        star.style.width = `${size}px`;
+                        star.style.height = `${size}px`;
+                        star.style.left = `${Math.random() * 100}%`;
+                        star.style.top = `${Math.random() * 100}%`;
+                        const duration = Math.random() * 3 + 2;
+                        const delay = Math.random() * 2;
+                        star.style.opacity = Math.random() * 0.5 + 0.1;
+                        star.style.animation = `twinkle ${duration}s infinite alternate ${delay}s ease-in-out`;
+                        starsContainer.appendChild(star);
+                    }
+                }
+            }
+        });
+
+        (function () {
+            var passwordToggleBtn = document.getElementById('password-toggle');
+            if (passwordToggleBtn) {
+                var passwordField = document.getElementById('password');
+                var showPasswordIcon = document.getElementById('show-password');
+                var hidePasswordIcon = document.getElementById('hide-password');
+
+                passwordToggleBtn.addEventListener('click', function () {
+                    var type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordField.setAttribute('type', type);
+                    showPasswordIcon.classList.toggle('hidden');
+                    hidePasswordIcon.classList.toggle('hidden');
+                });
+            }
+
+            var form = document.getElementById('login-form');
+            if (form) {
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    var emailInput = document.getElementById('email');
+                    var passwordInput = document.getElementById('password');
+                    var submitBtn = form.querySelector('button[type="submit"]');
+                    var originalButtonText = submitBtn.textContent;
+
+                    var email = emailInput.value;
+                    var password = passwordInput.value;
+
+                    if (!email || !password) {
+                        if (typeof toastr !== 'undefined') {
+                            toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true };
+                            toastr.warning('Please enter both email and password.', 'Missing Information');
+                        }
+                        return;
+                    }
+
+                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Signing in...';
+                    submitBtn.disabled = true;
+
+                    setTimeout(function () {
+                        if (typeof toastr !== 'undefined') {
+                            toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true };
+                            toastr.error('Login failed. Please check your credentials.', 'Authentication Error');
+                        }
+
+                        submitBtn.innerHTML = originalButtonText;
+                        submitBtn.disabled = false;
+
+                    }, 1500);
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>

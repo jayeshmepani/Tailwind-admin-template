@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tailwind Table</title>
+    <title>User Profile - Omniverse</title>
     <link rel="stylesheet" href="css/font-awesome.all.min.css" />
     <link rel="stylesheet" href="css/toastr.min.css">
     <link rel="stylesheet" href="css/flowbite.css" />
@@ -203,31 +203,23 @@
                                 2</span>
                             <div class="bg-white dark:bg-gray-700 submenu-hover">
                                 <ul class="bg-white dark:bg-gray-700 py-1 rounded">
-                                    <li>
-                                        <a href="#"
+                                    <li><a href="https://www.google.com"
                                             class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">Submenu
-                                            2.1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
+                                            2.1</a></li>
+                                    <li><a href="#"
                                             class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">Submenu
-                                            2.2</a>
-                                    </li>
+                                            2.2</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="submenu-click">
                             <ul>
-                                <li>
-                                    <a href="#"
+                                <li><a href="https://www.google.com"
                                         class="block pr-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:translate-x-1 rounded pl-8 transition">Submenu
-                                        2.1</a>
-                                </li>
-                                <li>
-                                    <a href="#"
+                                        2.1</a></li>
+                                <li><a href="#"
                                         class="block pr-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:translate-x-1 rounded pl-8 transition">Submenu
-                                        2.2</a>
-                                </li>
+                                        2.2</a></li>
                             </ul>
                         </div>
                     </li>
@@ -253,6 +245,7 @@
                 </ul>
             </div>
         </aside>
+
         <div id="main-content" class="flex-1 md:w-px">
             <header
                 class="bg-white dark:bg-gray-800 p-4 flex items-center border-b border-gray-200 dark:border-gray-700 md:justify-end max-md:justify-between">
@@ -355,21 +348,90 @@
                 </div>
             </header>
 
-            <!-- Content -->
             <main class="p-6">
                 <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
-                    Table
+                    User Profile
                 </h1>
-                <section id="table-section" class="section">
-                    <div id="my-table-container"></div>
-                </section>
 
-                <a href="charts.html"></a>
-                <a href="forms.html"></a>
-                <a href="elements.html"></a>
-                <a href="modals.html"></a>
-                <a href="notifications.html"></a>
-                <a href="table.html"></a>
+                <div
+                    class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h2 class="text-xl font-medium mb-4 text-gray-700 dark:text-gray-300">
+                                    Personal Information
+                                </h2>
+                                <div class="mb-4">
+                                    <label for="fullName"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full
+                                        Name</label>
+                                    <input type="text" id="fullName" value="John Doe"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Your full name" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email
+                                        Address</label>
+                                    <input type="email" id="email" value="name@flowbite.com"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="your.email@example.com" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="bio"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Bio</label>
+                                    <textarea id="bio"
+                                        class="field-sizing-content min-h-16 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Write something about yourself..."></textarea>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h2 class="text-xl font-medium mb-4 text-gray-700 dark:text-gray-300">
+                                    Account Settings
+                                </h2>
+                                <div class="mb-4">
+                                    <label for="current_password"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Current
+                                        Password</label>
+                                    <input type="password" id="current_password"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="••••••••">
+                                    <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Required if changing
+                                        password.</p>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="new_password"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">New
+                                        Password</label>
+                                    <input type="password" id="new_password"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="••••••••">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="confirm_password"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm New
+                                        Password</label>
+                                    <input type="password" id="confirm_password"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="••••••••">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex justify-end">
+                            <button type="button"
+                                class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                                Cancel
+                            </button>
+                            <button type="submit"
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
             </main>
         </div>
     </div>
@@ -377,52 +439,12 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/axios.min.js"></script>
     <script src="js/table-component.js"></script>
+    <script src="js/apexcharts.js"></script>
+    <script src="js/toastr.min.js"></script>
     <script src="js/flowbite.js" defer></script>
     <script src="js/font-awesome.all.min.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="js/theme.js"></script>
-
-    <script id="page-init-script">
-        $(document).ready(function () {
-            new TableComponent({
-                containerId: "my-table-container",
-                dataUrl: "test.json",
-                //serverSide: true, // Uncomment for server-side processing
-                pageSizeOptions: [5, 10, 25, 50, "All"],
-                defaultPageSize: 10,
-                enableSearch: true,
-                enableColumnsDropdown: true,
-                enableExportDropdown: true,
-                enableFullscreen: true,
-                enableViewToggle: true,
-                enableDelete: true,
-                enableRefresh: true,
-                editable: true,
-                customActions: [
-                    {
-                        type: "button",
-                        class:
-                            "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded text-xs", // Your custom class
-                        icon: "fa fa-edit",
-                        label: "Edit",
-                        modalId: "edit-modal-container",
-                        // route: '/your/api/items/{id}' // Optional here, saveEdit uses main option
-                    },
-                    {
-                        type: "modal",
-                        class:
-                            "bg-red-600 hover:bg-red-700 text-white py-1 px-2 rounded text-xs focus:outline-none transition-colors duration-200", // Your custom class
-                        icon: "fa fa-trash",
-                        label: "Delete",
-                        modalId: "delete-modal",
-                        //method: 'DELETE', // <-- Add HTTP method
-                        //route: '/your/api/items/{id}' // <-- Add the route template (matches options.deleteRoute)
-                    },
-                ],
-            });
-        });
-    </script>
-
 
 </body>
 
