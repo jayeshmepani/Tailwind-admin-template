@@ -123,7 +123,7 @@ html.dark {
 }
 
 body {
-    background-color: #f9fafb;
+    background-color: hsl(215, 85%, 98%);
     color: #1f2937;
 
     html.dark & {
@@ -134,7 +134,7 @@ body {
 
 #sidebar,
 header {
-    background-color: #ffffff;
+    background-color: white;
     border-color: #e5e7eb;
 
     html.dark & {

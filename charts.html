@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charts</title>
+    <title>Charts - ApexCharts Examples</title>
     <link rel="stylesheet" href="css/font-awesome.all.min.css">
     <link rel="stylesheet" href="css/toastr.min.css">
     <link rel="stylesheet" href="css/flowbite.css">
@@ -275,8 +275,11 @@
                 </ul>
             </div>
         </aside>
+
         <div id="main-content" class="flex-1 md:w-px">
+            <!-- Header (Assuming it remains unchanged) -->
             <header class="py-4 px-3 flex items-center border-b md:justify-end max-md:justify-between">
+                <!-- Header content from your example -->
                 <button id="mobileMenuToggle"
                     class="p-2 rounded-lg text-gray-500 dark:text-gray-400 md:hidden hover:bg-gray-100 dark:hover:bg-gray-700">
                     <svg class="mobile-toggle-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -377,29 +380,31 @@
                     </div>
                 </div>
             </header>
+
             <main class="p-6">
-                <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Charts</h1>
+                <h1 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">ApexCharts Examples</h1>
                 <section id="charts-section" class="section">
+                    <!-- Grid for Charts -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+
+                        <!-- Line Chart -->
                         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-                            <div class="flex justify-between items-center mb-4">
-                                <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200">Revenue Overview</h2>
-                                <div>
-                                    <select
-                                        class="text-sm bg-white text-gray-900 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 rounded py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400">
-                                        <option>Last 7 Days</option>
-                                        <option>Last 30 Days</option>
-                                        <option>Last Quarter</option>
-                                        <option>Year to Date</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div id="revenue-chart" class="h-64"></div>
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Line Chart</h2>
+                            <div id="line-chart" class="h-64"></div>
                         </div>
 
+                        <!-- Area Chart -->
                         <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Area Chart</h2>
+                            <div id="area-chart" class="h-64"></div>
+                        </div>
+
+                        <!-- Column Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Column Chart (Original
+                                Revenue)</h2>
                             <div class="flex justify-between items-center mb-4">
-                                <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200">Traffic Sources</h2>
+                                <div></div> <!-- Placeholder for alignment -->
                                 <div>
                                     <select
                                         class="text-sm bg-white text-gray-900 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 rounded py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400">
@@ -410,11 +415,91 @@
                                     </select>
                                 </div>
                             </div>
-                            <div id="traffic-chart" class="h-64"></div>
+                            <div id="revenue-chart" class="h-64"></div> <!-- Keep original ID -->
                         </div>
-                    </div>
+
+                        <!-- Bar Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Bar Chart</h2>
+                            <div id="bar-chart" class="h-64"></div>
+                        </div>
+
+                        <!-- Pie Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200">Pie Chart (Original
+                                    Traffic)</h2>
+                                <div>
+                                    <select
+                                        class="text-sm bg-white text-gray-900 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 rounded py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400">
+                                        <option>Last 7 Days</option>
+                                        <option>Last 30 Days</option>
+                                        <option>Last Quarter</option>
+                                        <option>Year to Date</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="traffic-chart" class="h-64"></div> <!-- Keep original ID -->
+                        </div>
+
+                        <!-- Donut Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Donut Chart</h2>
+                            <div id="donut-chart" class="h-64"></div>
+                        </div>
+
+                        <!-- Radial Bar Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Radial Bar Chart</h2>
+                            <div id="radialbar-chart" class="h-64"></div>
+                        </div>
+
+                        <!-- Polar Area Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Polar Area Chart</h2>
+                            <div id="polararea-chart" class="h-64"></div>
+                        </div>
+
+                        <!-- Radar Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Radar Chart</h2>
+                            <div id="radar-chart" class="h-64"></div>
+                        </div>
+
+                        <!-- Scatter Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Scatter Chart</h2>
+                            <div id="scatter-chart" class="h-64"></div>
+                        </div>
+
+                        <!-- Bubble Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Bubble Chart</h2>
+                            <div id="bubble-chart" class="h-64"></div>
+                        </div>
+
+                        <!-- Heatmap Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Heatmap Chart</h2>
+                            <div id="heatmap-chart" class="h-64"></div>
+                        </div>
+
+                        <!-- Candlestick Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Candlestick Chart</h2>
+                            <div id="candlestick-chart" class="h-64"></div>
+                        </div>
+
+                        <!-- Treemap Chart -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+                            <h2 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-4">Treemap Chart</h2>
+                            <div id="treemap-chart" class="h-64"></div>
+                        </div>
+
+                    </div> <!-- End Grid -->
                 </section>
 
+                <!-- Links (Assuming these are correct) -->
                 <a href="charts.html"></a>
                 <a href="forms.html"></a>
                 <a href="elements.html"></a>
@@ -435,8 +520,8 @@
     <script src="js/flowbite.js" defer></script>
     <script src="js/sidebar.js" defer></script>
     <script src="js/theme.js"></script>
-
     <script id="page-init-script" src="js/charts.js"></script>
+
 </body>
 
 </html>
