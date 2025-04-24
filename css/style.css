@@ -32,6 +32,33 @@
     --body-text-dark: #F3F4F6;
 }
 
+@font-face {
+    font-family: 'LavishlyYours';
+    src: url('/webfonts/LavishlyYours-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+#logo {
+    span {
+        font-family: LavishlyYours, cursive;
+        font-weight: 600;
+        font-size: 2rem;
+    }
+
+    svg {
+        transition: all 0.4s ease;
+        filter: saturate(0.85) brightness(1.11);
+    }
+
+    html.dark & {
+        svg {
+            filter: saturate(0.7) brightness(1.5);
+            transition: all 0.4s ease;
+        }
+    }
+}
 
 @view-transition {
     navigation: auto;
@@ -129,7 +156,7 @@ header {
 
 
         svg {
-            color: #6366f1;
+            color: hsl(240, 83%, 67%);
         }
 
         &:hover {
@@ -142,7 +169,7 @@ header {
             border-left-color: #818cf8;
 
             svg {
-                color: #818cf8;
+                color: hsl(234, 89%, 75%);
             }
 
             &:hover {

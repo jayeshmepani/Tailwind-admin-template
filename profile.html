@@ -19,12 +19,15 @@
                 <div id="logo" class="flex items-center">
                     <div class="w-8 h-8">
                         <svg viewBox="0 0 100 100" class="w-full h-full">
-                            <circle cx="33" cy="33" r="25" fill="#FF6B6B" />
-                            <circle cx="67" cy="33" r="25" fill="#FFD93D" />
-                            <circle cx="50" cy="67" r="25" fill="#6BCB77" />
-                            <circle cx="33" cy="33" r="25" fill="#FF6B6B" opacity="0.7" />
-                            <circle cx="67" cy="33" r="25" fill="#FFD93D" opacity="0.7" />
-                            <circle cx="50" cy="67" r="25" fill="#6BCB77" opacity="0.7" />
+                            <circle cx="33" cy="33" r="25" fill="red" class="transition-colors duration-500" />
+                            <circle cx="67" cy="33" r="25" fill="green" class="transition-colors duration-700" />
+                            <circle cx="50" cy="67" r="25" fill="blue" class="transition-colors duration-900" />
+                            <circle cx="33" cy="33" r="25" fill="red" opacity="0.5"
+                                class="transition-colors duration-500" />
+                            <circle cx="67" cy="33" r="25" fill="green" opacity="0.5"
+                                class="transition-colors duration-700" />
+                            <circle cx="50" cy="67" r="25" fill="blue" opacity="0.5"
+                                class="transition-colors duration-900" />
                         </svg>
                     </div>
                     <span class="menu-text ml-3 text-xl font-semibold text-gray-800 dark:text-gray-200">Omniverse</span>
@@ -238,11 +241,11 @@
                     </p>
                     <li class="menu-item hover-trigger">
                         <a href="sign-in.html"
-                            class="flex p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-l-md">
+                            class="flex p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                             </svg>
                             <span class="menu-text ml-3">Sign-in</span>
                         </a>
@@ -250,6 +253,23 @@
                             class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                             <span
                                 class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-1.5 text-gray-700 text-sm bg-white">Sign-in</span>
+                        </div>
+                    </li>
+
+                    <li class="menu-item hover-trigger">
+                        <a href="sign-up.html"
+                            class="flex p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 dark:text-gray-400"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                            </svg>
+                            <span class="menu-text ml-3">Sign-up</span>
+                        </a>
+                        <div
+                            class="menu-hover-area bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <span
+                                class="block dark:bg-gray-700 dark:text-gray-300 px-4 py-1.5 text-gray-700 text-sm bg-white">Sign-up</span>
                         </div>
                     </li>
                 </ul>
@@ -445,10 +465,8 @@
         </div>
     </div>
 
-    <!-- Preload critical scripts -->
     <link rel="preload" href="js/font-awesome.all.min.js" as="script">
 
-    <!-- Deferred scripts -->
     <script src="js/jquery-3.7.1.min.js" defer></script>
     <script src="js/axios.min.js" defer></script>
     <script src="js/table-component.js" defer></script>
@@ -456,7 +474,7 @@
     <script src="js/toastr.min.js" defer></script>
     <script src="js/flowbite.js" defer></script>
     <script src="js/sidebar.js" defer></script>
-    <script src="js/theme.js" defer></script>
+    <script src="js/theme.js"></script>
 
 
 </body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In - Omniverse</title>
+    <title>Sign Up - Omniverse</title>
     <link rel="stylesheet" href="css/font-awesome.all.min.css" />
     <link rel="stylesheet" href="css/toastr.min.css">
     <link rel="stylesheet" href="css/flowbite.css" />
@@ -47,7 +47,7 @@
     </div>
 
     <section class="flex flex-col items-center justify-center px-6 py-8 mx-auto min-h-screen lg:py-0 relative z-10">
-        <a href="#" class="flex items-center mb-6 group">
+        <a href="index.html" class="flex items-center mb-6 group">
             <div class="w-9 h-9 mr-2.5 transition-transform duration-300 ease-in-out group-hover:scale-110">
                 <svg viewBox="0 0 100 100" class="w-full h-full">
                     <circle cx="33" cy="33" r="25" fill="red" class="transition-colors duration-500" />
@@ -67,9 +67,22 @@
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1
                     class="text-xl font-bold leading-tight tracking-tight text-center text-gray-900 md:text-2xl dark:text-white">
-                    Sign in to your account
+                    Create a new account
                 </h1>
-                <form class="space-y-4 md:space-y-6" action="#" id="login-form">
+                <form class="space-y-4 md:space-y-6" action="#" id="signup-form">
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                            name</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <i class="fa-regular fa-user text-gray-400 dark:text-gray-500 w-4 h-4"></i>
+                            </div>
+                            <input type="text" name="name" id="name"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 transition duration-150 ease-in-out"
+                                placeholder="John Doe" required>
+                        </div>
+                    </div>
+
                     <div>
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
                             email</label>
@@ -113,47 +126,58 @@
                         </div>
                     </div>
 
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <input id="remember" aria-describedby="remember" type="checkbox"
-                                class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-indigo-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-indigo-600 dark:ring-offset-gray-800 ring-offset-gray-200">
-                            <label for="remember"
-                                class="ml-3 text-sm font-light text-gray-500 dark:text-gray-300">Remember me</label>
+                    <div>
+                        <label for="confirm-password"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm
+                            password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <i class="fa-solid fa-lock text-gray-400 dark:text-gray-500 w-4 h-4"></i>
+                            </div>
+                            <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 transition duration-150 ease-in-out"
+                                required>
+                            <button type="button" id="confirm-password-toggle"
+                                class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5 focus:outline-none text-gray-400 dark:text-gray-500">
+                                <svg id="show-confirm-password" class="w-5 h-5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                    </path>
+                                </svg>
+                                <svg id="hide-confirm-password" class="w-5 h-5 hidden" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21">
+                                    </path>
+                                </svg>
+                            </button>
                         </div>
-                        <a href="#"
-                            class="text-sm font-medium text-indigo-600 hover:underline dark:text-indigo-500">Forgot
-                            password?</a>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="terms" aria-describedby="terms" type="checkbox"
+                                class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-indigo-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-indigo-600 dark:ring-offset-gray-800 ring-offset-gray-200"
+                                required>
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="terms" class="font-light text-gray-500 dark:text-gray-300">I accept the <a
+                                    class="font-medium text-indigo-600 hover:underline dark:text-indigo-500"
+                                    href="#">Terms and Conditions</a></label>
+                        </div>
                     </div>
 
                     <button type="submit"
                         class="w-full text-white bg-gradient-to-r from-indigo-600 to-blue-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-md hover:shadow-lg dark:shadow-blue-900/40 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-all duration-300 ease-in-out transform hover:-translate-y-0.5">
-                        Sign in
+                        Create account
                     </button>
 
-                    <div class="flex items-center pt-2">
-                        <div class="flex-grow border-t border-gray-200 dark:border-gray-600"></div>
-                        <span class="flex-shrink mx-4 text-sm text-gray-400 dark:text-gray-500">Or sign in with</span>
-                        <div class="flex-grow border-t border-gray-200 dark:border-gray-600"></div>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-3">
-                        <button type="button"
-                            class="flex items-center justify-center w-full py-2.5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 transition duration-150 ease-in-out">
-                            <i class="fa-brands fa-google text-red-500 w-5 h-5"></i>
-                        </button>
-                        <button type="button"
-                            class="flex items-center justify-center w-full py-2.5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 transition duration-150 ease-in-out">
-                            <i class="fa-brands fa-apple text-gray-700 dark:text-gray-300 w-5 h-5"></i>
-                        </button>
-                        <button type="button"
-                            class="flex items-center justify-center w-full py-2.5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 transition duration-150 ease-in-out">
-                            <i class="fa-brands fa-microsoft text-blue-500 w-5 h-5"></i>
-                        </button>
-                    </div>
-
                     <p class="text-sm font-light text-center text-gray-500 dark:text-gray-400 pt-2">
-                        Don’t have an account yet? <a href="sign-up.html"
-                            class="font-medium text-indigo-600 hover:underline dark:text-indigo-500">Sign up</a>
+                        Already have an account? <a href="sign-in.html"
+                            class="font-medium text-indigo-600 hover:underline dark:text-indigo-500">Login here</a>
                     </p>
                 </form>
             </div>
@@ -199,58 +223,100 @@
         });
 
         (function () {
-            var passwordToggleBtn = document.getElementById('password-toggle');
-            if (passwordToggleBtn) {
-                var passwordField = document.getElementById('password');
-                var showPasswordIcon = document.getElementById('show-password');
-                var hidePasswordIcon = document.getElementById('hide-password');
+            function setupPasswordToggle(buttonId, fieldId, showIconId, hideIconId) {
+                var toggleBtn = document.getElementById(buttonId);
+                if (toggleBtn) {
+                    var passwordField = document.getElementById(fieldId);
+                    var showIcon = document.getElementById(showIconId);
+                    var hideIcon = document.getElementById(hideIconId);
 
-                passwordToggleBtn.addEventListener('click', function () {
-                    var type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-                    passwordField.setAttribute('type', type);
-                    showPasswordIcon.classList.toggle('hidden');
-                    hidePasswordIcon.classList.toggle('hidden');
-                });
+                    if (passwordField && showIcon && hideIcon) {
+                        toggleBtn.addEventListener('click', function () {
+                            var type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                            passwordField.setAttribute('type', type);
+                            showIcon.classList.toggle('hidden');
+                            hideIcon.classList.toggle('hidden');
+                        });
+                    }
+                }
             }
 
-            var form = document.getElementById('login-form');
+            setupPasswordToggle('password-toggle', 'password', 'show-password', 'hide-password');
+
+            setupPasswordToggle('confirm-password-toggle', 'confirm-password', 'show-confirm-password', 'hide-confirm-password');
+
+            var form = document.getElementById('signup-form');
             if (form) {
                 form.addEventListener('submit', function (event) {
                     event.preventDefault();
 
+                    var nameInput = document.getElementById('name');
                     var emailInput = document.getElementById('email');
                     var passwordInput = document.getElementById('password');
+                    var confirmPasswordInput = document.getElementById('confirm-password');
+                    var termsInput = document.getElementById('terms');
                     var submitBtn = form.querySelector('button[type="submit"]');
                     var originalButtonText = submitBtn.textContent;
 
+                    var name = nameInput.value;
                     var email = emailInput.value;
                     var password = passwordInput.value;
+                    var confirmPassword = confirmPasswordInput.value;
+                    var termsAccepted = termsInput.checked;
 
-                    if (!email || !password) {
+                    if (!name || !email || !password || !confirmPassword) {
                         if (typeof toastr !== 'undefined') {
                             toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true };
-                            toastr.warning('Please enter both email and password.', 'Missing Information');
+                            toastr.warning('Please fill in all required fields.', 'Missing Information');
                         }
                         return;
                     }
 
-                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Signing in...';
+                    if (password !== confirmPassword) {
+                        if (typeof toastr !== 'undefined') {
+                            toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true };
+                            toastr.error('Passwords do not match.', 'Validation Error');
+                        }
+                        confirmPasswordInput.focus();
+                        return;
+                    }
+
+                    if (!termsAccepted) {
+                        if (typeof toastr !== 'undefined') {
+                            toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true };
+                            toastr.warning('You must accept the Terms and Conditions.', 'Agreement Required');
+                        }
+                        return;
+                    }
+
+                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Creating account...';
                     submitBtn.disabled = true;
 
                     setTimeout(function () {
-                        if (typeof toastr !== 'undefined') {
-                            toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true };
-                            toastr.error('Login failed. Please check your credentials.', 'Authentication Error');
+                        var success = false;
+
+                        if (success) {
+                            if (typeof toastr !== 'undefined') {
+                                toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, "timeOut": 3000, "onclick": function () { window.location.href = 'sign-in.html'; } };
+                                toastr.success('Account created successfully! Redirecting to login...', 'Success');
+                            }
+                            setTimeout(function () {
+                                window.location.href = 'sign-in.html';
+                            }, 3100);
+                        } else {
+                            if (typeof toastr !== 'undefined') {
+                                toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true };
+                                toastr.error('Account creation failed. Please try again later.', 'Error');
+                            }
+                            submitBtn.innerHTML = originalButtonText;
+                            submitBtn.disabled = false;
                         }
-
-                        submitBtn.innerHTML = originalButtonText;
-                        submitBtn.disabled = false;
-
                     }, 1500);
                 });
             }
         })();
     </script>
+
 </body>
 
 </html>
