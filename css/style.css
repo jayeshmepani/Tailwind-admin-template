@@ -652,6 +652,8 @@ div#profileDropdown {
     .menu-hover-area {
         display: none;
     }
+
+
 }
 
 @media (width>=768px) {
@@ -659,5 +661,13 @@ div#profileDropdown {
         .menu-hover-area {
             display: none;
         }
+    }
+}
+
+#login-form {
+    button i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

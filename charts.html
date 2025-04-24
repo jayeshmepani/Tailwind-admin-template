@@ -405,15 +405,19 @@
         </div>
     </div>
 
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/axios.min.js"></script>
-    <script src="js/table-component.js"></script>
-    <script src="js/apexcharts.js"></script>
-    <script src="js/toastr.min.js"></script>
+    <!-- Preload critical scripts -->
+    <link rel="preload" href="js/font-awesome.all.min.js" as="script">
+
+    <!-- Deferred scripts -->
+    <script src="js/jquery-3.7.1.min.js" defer></script>
+    <script src="js/axios.min.js" defer></script>
+    <script src="js/table-component.js" defer></script>
+    <script src="js/apexcharts.js" defer></script>
+    <script src="js/toastr.min.js" defer></script>
     <script src="js/flowbite.js" defer></script>
-    <script src="js/font-awesome.all.min.js"></script>
-    <script src="js/sidebar.js"></script>
-    <script src="js/theme.js"></script>
+    <script src="js/sidebar.js" defer></script>
+    <script src="js/theme.js" defer></script>
+
     <script id="page-init-script" src="js/charts.js"></script>
 </body>
 
