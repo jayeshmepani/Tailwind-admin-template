@@ -125,6 +125,7 @@ html.dark {
 body {
     background-color: hsl(215, 85%, 98%);
     color: #1f2937;
+    max-width: 100dvw;
 
     html.dark & {
         background-color: #111827;
@@ -208,13 +209,13 @@ main {
 }
 
 .theme-toggle-container {
-    margin-right: 1rem;
-}
-
-.theme-toggle-container {
     display: flex;
     align-items: center;
     margin-right: 1rem;
+
+    body:has(#login-form, #signup-form) & {
+        margin-right: 0;
+    }
 }
 
 .toggle {
@@ -634,12 +635,13 @@ div#profileDropdown {
             #mobileMenuToggle {
                 position: relative;
                 z-index: 99999;
+                margin-right: 1rem;
             }
         }
 
-        &[style="width: 15rem;"] {
+        &[style*="width: 15rem;"] {
             z-index: 9999;
-            position: fixed;
+            /* position: fixed; */
             width: 15rem !important;
             display: block;
             opacity: 1;
@@ -653,7 +655,7 @@ div#profileDropdown {
             }
         }
 
-        &[style="width: 0px;"] {
+        &[style*="width: 0px;"] {
             width: 0px !important;
             display: none;
             opacity: 0;
@@ -691,10 +693,19 @@ div#profileDropdown {
     }
 }
 
-#login-form {
-    button i {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+#login-form,
+#signup-form {
+    button {
+        text-box: trim-both cap alphabetic;
+
+        &:not(:has(i)) {
+            padding-block: 1rem;
+        }
+
+        i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileMenuToggle = document.getElementById("mobileMenuToggle");
     const desktopMenuToggle = document.getElementById("desktopMenuToggle");
     const sidebar = document.getElementById("sidebar");
+
     let isSidebarCollapsed = false;
     const mobileToggleIcon = mobileMenuToggle.querySelector('.mobile-toggle-icon');
     const menuIcon = mobileToggleIcon.querySelector('.menu-icon');
@@ -92,4 +93,33 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 1500);
         });
     }
+
+    function getMaxHeight(el) {
+        const style = window.getComputedStyle(el);
+        const marginTop = parseFloat(style.marginTop) || 0;
+        const marginBottom = parseFloat(style.marginBottom) || 0;
+        return el.offsetHeight + marginTop + marginBottom;
+    }
+
+    const allElements = document.querySelectorAll('*');
+    let maxHeight = 0;
+
+    allElements.forEach(el => {
+        const outerHeight = getMaxHeight(el);
+        if (outerHeight > maxHeight) {
+            maxHeight = outerHeight;
+        }
+    });
+
+    const htmlOuterHeight = getMaxHeight(document.documentElement);
+    if (htmlOuterHeight > maxHeight) {
+        maxHeight = htmlOuterHeight;
+    }
+
+    if (sidebar) {
+        sidebar.style.height = maxHeight + 'px';
+    } else {
+        console.warn("Element with ID 'sidebar' not found!");
+    }
 });
+
