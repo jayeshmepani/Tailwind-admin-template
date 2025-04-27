@@ -230,7 +230,10 @@ div#main-content {
     display: flex;
     align-items: center;
     margin-right: 1rem;
-    z-index: 0;
+
+    body:not(:has(#login-form, #signup-form)) &{
+        z-index: 0;
+    }
 
     body:has(#login-form, #signup-form) & {
         margin-right: 0;
