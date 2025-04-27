@@ -7297,7 +7297,7 @@ exports.initModals = void 0;
 var instances_1 = __webpack_require__(423);
 var Default = {
     placement: 'center',
-    backdropClasses: 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40',
+    // backdropClasses: 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40',
     backdrop: 'dynamic',
     closable: true,
     onHide: function () { },
