@@ -47,7 +47,8 @@
                 </p>
                 <ul class="space-y-2">
                     <li class="menu-item hover-trigger">
-                        <a href="/" class="flex p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-l-md">
+                        <a href="/"
+                            class="flex p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-l-md">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -457,7 +458,7 @@
                         </button>
 
                         <div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
-                            class="hidden fixed inset-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            class="hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                             <div class="relative p-4 w-full max-w-2xl max-h-full">
                                 <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
                                     <div
@@ -553,8 +554,8 @@
                         </button>
 
                         <div id="fullscreen-modal" tabindex="-1"
-                            class="hidden fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-75 dark:bg-opacity-80">
-                            <div class="w-full h-full p-6 lg:p-12">
+                            class="hidden fixed inset-0 z-50 items-center justify-center bg-opacity-75 dark:bg-opacity-80">
+                            <div class="w-full h-full p-6 lg:p-12 z-40">
                                 <div class="h-full bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-auto">
                                     <div class="p-6 border-b dark:border-gray-600 flex items-center justify-between">
                                         <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Fullscreen Modal
@@ -609,10 +610,8 @@
     <script src="js/apexcharts.js" defer></script>
     <script src="js/toastr.min.js" defer></script>
     <script src="js/flowbite.js" defer></script>
-    <script src="js/sidebar.js" defer></script>
+    <script src="js/sidebar.js"></script>
     <script src="js/theme.js"></script>
-
-
 </body>
 
 </html>
